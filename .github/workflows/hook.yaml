@@ -22,7 +22,6 @@ jobs:
           remote-keys: |
             ${{ runner.os }}-go-
   compile-pb:
-    needs: pick-service-name
     runs-on: ubuntu-20.04
     env:
       SERVICE_NAME: gateway
