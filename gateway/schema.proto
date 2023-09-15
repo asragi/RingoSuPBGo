@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ringosu;
+
+option go_package = "/proto";
+
+message GetStageActionDetailResponse {
+  string user_id = 1;
+  string stage_id = 2;
+  string display_name = 3;
+  string action_display_name = 4;
+  int32 required_payment = 5;
+  int32 required_stamina = 6;
+  repeated RequiredItem required_items = 7;
+  repeated EarningItem earning_items = 8;
+  repeated RequiredSkill required_skills = 9;
+}
+
+message RequiredItem {
+  string item_id = 1;
+  int32 required_count = 2;
+  int32 stock = 3;
+  bool is_known = 4;
+}
+
+message EarningItem {
+  string item_id = 1;
+  bool is_known = 2;
+}
+
+message RequiredSkill {
+  string skill_id = 1;
+  string display_name = 2;
+  int32 skill_lv = 3;
+  int32 required_lv = 4;
+}
