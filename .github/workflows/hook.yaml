@@ -21,28 +21,6 @@ jobs:
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           remote-keys: |
             ${{ runner.os }}-go-
-  pick-service-name:
-    needs: setup
-    runs-on: ubuntu-20.04
-    outputs:
-      pr-title: ${{ steps.pickPR.outputs.prTitle }}
-      service-name: ${{ steps.pickPR.outputs.serviceName }}
-    steps:
-      - name: Check out
-        uses: actions/checkout@v2
-      - name: def pickServiceName
-        uses: actions/github-script@v3
-        env:
-          PR_TITLE: ${{ github.event.client_payload.pr_title }}
-        id: pickServiceName
-        with:
-          result-encoding: string
-          script: |
-            const prTitle = process.env.PR_TITLE
-            return prTitle.match(/:/) ?
-              prTitle.split(':')[0]
-              : core.setFailed('Not setup service name')
-      - name: pickup service name from PR title
   compile-pb:
     needs: pick-service-name
     runs-on: ubuntu-20.04
