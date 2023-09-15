@@ -72,7 +72,7 @@ jobs:
           export PATH="$PATH:$(go env GOPATH)/bin"
           echo "PATH is $PATH"
           echo "GO PATH is $(go env GOPATH)"
-          echo $(go env GOPATH)/bin
+          ls $(go env GOPATH)/bin
           protoc \
             --doc_out=./docs --doc_opt=markdown,${{ env.SERVICE_NAME }}.md \
             --go_out=. --go_opt=paths=source_relative \
