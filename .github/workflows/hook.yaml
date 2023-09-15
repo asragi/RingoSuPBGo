@@ -74,7 +74,7 @@ jobs:
             --doc_out=./docs --doc_opt=markdown,${{ env.SERVICE_NAME }}.md \
             --go_out=. --go_opt=paths=source_relative \
             --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-            ${{ env.SERVICE_NAME }}/proto/${{ env.SERVICE_NAME }}.proto
+            ${{ env.SERVICE_NAME }}/*.proto
       - name: rm go mod & sum
         run: rm go.mod go.sum
       - name: create PR
