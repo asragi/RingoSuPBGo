@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       SERVICE_NAME: gateway
+      REPO_NAME: RingoSu
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -36,15 +37,15 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: copy target service
         run: |
-          echo '== ls aggregation-pb/${{ env.SERVICE_NAME }} =='
-          ls aggregation-pb/${{ env.SERVICE_NAME }}
+          echo '== ls ${{ env.REPO_NAME }}/${{ env.SERVICE_NAME }} =='
+          ls ${{ env.REPO_NAME }}/${{ env.SERVICE_NAME }}
           if [ -d ${{ env.SERVICE_NAME }} ]; then
             rm -rf ${{ env.SERVICE_NAME }}
           fi
-          cp -rf aggregation-pb/${{ env.SERVICE_NAME }} ${{ env.SERVICE_NAME }}
-      - name: clean aggregation-pb
+          cp -rf ${{ env.REPO_NAME }}/${{ env.SERVICE_NAME }} ${{ env.SERVICE_NAME }}
+      - name: clean ${{ env.REPO_NAME }}
         run: |
-          rm -rf aggregation-pb
+          rm -rf ${{ env.REPO_NAME }}
       - name: ls test
         run: |
           echo '== ls =='
