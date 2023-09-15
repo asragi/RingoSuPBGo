@@ -61,9 +61,9 @@ jobs:
       ## protocするための関連パッケージをゲット
       - name: get protoc
         run: |
-          go get -v google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
-          go get -v google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
-          go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+          go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
       ## ドキュメント生成用のディレクトリを生成
       - name: make directory docs
         run: mkdir -p docs
