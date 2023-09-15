@@ -1,7 +1,7 @@
 name: compile
 on:
   repository_dispatch:
-    types: [compile_pb]
+    types: [compile-pb]
 
 jobs:
   setup:
