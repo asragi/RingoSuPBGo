@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ringosu;
 
-option go_package = "/proto";
+option go_package = "/gateway";
 
 message GetStageActionDetailResponse {
   string user_id = 1;
