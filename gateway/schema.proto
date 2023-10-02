@@ -4,6 +4,13 @@ package ringosu;
 
 option go_package = "/gateway";
 
+message GetStageActionDetailRequest {
+  string user_id = 1;
+  string stage_id = 2;
+  string token = 3;
+  string explore_id = 4;
+}
+
 message GetStageActionDetailResponse {
   string user_id = 1;
   string stage_id = 2;
@@ -33,4 +40,9 @@ message RequiredSkill {
   string display_name = 2;
   int32 skill_lv = 3;
   int32 required_lv = 4;
+}
+
+message Error {
+  bool error_occured = 1;
+  string display_message = 2;
 }
