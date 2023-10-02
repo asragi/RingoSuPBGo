@@ -5,6 +5,8 @@
 
 - [gateway/schema.proto](#gateway_schema-proto)
     - [EarningItem](#ringosu-EarningItem)
+    - [Error](#ringosu-Error)
+    - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
@@ -30,6 +32,40 @@
 | ----- | ---- | ----- | ----------- |
 | item_id | [string](#string) |  |  |
 | is_known | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="ringosu-Error"></a>
+
+### Error
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error_occured | [bool](#bool) |  |  |
+| display_message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetStageActionDetailRequest"></a>
+
+### GetStageActionDetailRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| stage_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+| explore_id | [string](#string) |  |  |
 
 
 
