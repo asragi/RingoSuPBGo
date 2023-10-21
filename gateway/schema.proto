@@ -42,6 +42,17 @@ message RequiredSkill {
   int32 required_lv = 4;
 }
 
+message PostActionRequest {
+  string user_id = 1;
+  string token = 2;
+  string explore_id = 3;
+  int32 exec_count = 4;
+}
+
+message PostActionResponse {
+  Error error = 1;
+}
+
 message Error {
   bool error_occured = 1;
   string display_message = 2;

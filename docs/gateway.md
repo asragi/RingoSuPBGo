@@ -8,6 +8,8 @@
     - [Error](#ringosu-Error)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
+    - [PostActionRequest](#ringosu-PostActionRequest)
+    - [PostActionResponse](#ringosu-PostActionResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
   
@@ -89,6 +91,39 @@
 | required_items | [RequiredItem](#ringosu-RequiredItem) | repeated |  |
 | earning_items | [EarningItem](#ringosu-EarningItem) | repeated |  |
 | required_skills | [RequiredSkill](#ringosu-RequiredSkill) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-PostActionRequest"></a>
+
+### PostActionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+| explore_id | [string](#string) |  |  |
+| exec_count | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-PostActionResponse"></a>
+
+### PostActionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
 
 
 
