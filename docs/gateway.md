@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [gateway/schema.proto](#gateway_schema-proto)
+    - [ConsumedItems](#ringosu-ConsumedItems)
+    - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
     - [Error](#ringosu-Error)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
@@ -12,6 +14,7 @@
     - [PostActionResponse](#ringosu-PostActionResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
+    - [SkillGrowthResult](#ringosu-SkillGrowthResult)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -21,6 +24,38 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## gateway/schema.proto
+
+
+
+<a name="ringosu-ConsumedItems"></a>
+
+### ConsumedItems
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_id | [string](#string) |  |  |
+| count | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-EarnedItems"></a>
+
+### EarnedItems
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_id | [string](#string) |  |  |
+| count | [int32](#int32) |  |  |
+
+
+
 
 
 
@@ -124,6 +159,9 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | error | [Error](#ringosu-Error) |  |  |
+| earned_items | [EarnedItems](#ringosu-EarnedItems) | repeated |  |
+| consumed_items | [ConsumedItems](#ringosu-ConsumedItems) | repeated |  |
+| skill_growth_result | [SkillGrowthResult](#ringosu-SkillGrowthResult) | repeated |  |
 
 
 
@@ -160,6 +198,26 @@
 | display_name | [string](#string) |  |  |
 | skill_lv | [int32](#int32) |  |  |
 | required_lv | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-SkillGrowthResult"></a>
+
+### SkillGrowthResult
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| skill_id | [string](#string) |  |  |
+| before_exp | [int32](#int32) |  |  |
+| before_lv | [int32](#int32) |  |  |
+| after_exp | [int32](#int32) |  |  |
+| after_lv | [int32](#int32) |  |  |
+| display_name | [string](#string) |  |  |
 
 
 

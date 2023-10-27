@@ -49,8 +49,30 @@ message PostActionRequest {
   int32 exec_count = 4;
 }
 
+message EarnedItems {
+  string item_id = 10;
+  int32 count = 1;
+}
+
+message ConsumedItems {
+  string item_id = 10;
+  int32 count = 1;
+}
+
+message SkillGrowthResult {
+  string skill_id = 10;
+  int32 before_exp = 1;
+  int32 before_lv = 2;
+  int32 after_exp = 3;
+  int32 after_lv = 4;
+  string display_name = 5;
+}
+
 message PostActionResponse {
   Error error = 1;
+  repeated EarnedItems earned_items = 2;
+  repeated ConsumedItems consumed_items = 3;
+  repeated SkillGrowthResult skill_growth_result = 4;
 }
 
 message Error {

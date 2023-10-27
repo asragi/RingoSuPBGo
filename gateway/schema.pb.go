@@ -470,18 +470,218 @@ func (x *PostActionRequest) GetExecCount() int32 {
 	return 0
 }
 
+type EarnedItems struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ItemId string `protobuf:"bytes,10,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Count  int32  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+}
+
+func (x *EarnedItems) Reset() {
+	*x = EarnedItems{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EarnedItems) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EarnedItems) ProtoMessage() {}
+
+func (x *EarnedItems) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EarnedItems.ProtoReflect.Descriptor instead.
+func (*EarnedItems) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *EarnedItems) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *EarnedItems) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type ConsumedItems struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ItemId string `protobuf:"bytes,10,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Count  int32  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+}
+
+func (x *ConsumedItems) Reset() {
+	*x = ConsumedItems{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ConsumedItems) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConsumedItems) ProtoMessage() {}
+
+func (x *ConsumedItems) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConsumedItems.ProtoReflect.Descriptor instead.
+func (*ConsumedItems) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ConsumedItems) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ConsumedItems) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type SkillGrowthResult struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SkillId     string `protobuf:"bytes,10,opt,name=skill_id,json=skillId,proto3" json:"skill_id,omitempty"`
+	BeforeExp   int32  `protobuf:"varint,1,opt,name=before_exp,json=beforeExp,proto3" json:"before_exp,omitempty"`
+	BeforeLv    int32  `protobuf:"varint,2,opt,name=before_lv,json=beforeLv,proto3" json:"before_lv,omitempty"`
+	AfterExp    int32  `protobuf:"varint,3,opt,name=after_exp,json=afterExp,proto3" json:"after_exp,omitempty"`
+	AfterLv     int32  `protobuf:"varint,4,opt,name=after_lv,json=afterLv,proto3" json:"after_lv,omitempty"`
+	DisplayName string `protobuf:"bytes,5,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+}
+
+func (x *SkillGrowthResult) Reset() {
+	*x = SkillGrowthResult{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SkillGrowthResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkillGrowthResult) ProtoMessage() {}
+
+func (x *SkillGrowthResult) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkillGrowthResult.ProtoReflect.Descriptor instead.
+func (*SkillGrowthResult) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *SkillGrowthResult) GetSkillId() string {
+	if x != nil {
+		return x.SkillId
+	}
+	return ""
+}
+
+func (x *SkillGrowthResult) GetBeforeExp() int32 {
+	if x != nil {
+		return x.BeforeExp
+	}
+	return 0
+}
+
+func (x *SkillGrowthResult) GetBeforeLv() int32 {
+	if x != nil {
+		return x.BeforeLv
+	}
+	return 0
+}
+
+func (x *SkillGrowthResult) GetAfterExp() int32 {
+	if x != nil {
+		return x.AfterExp
+	}
+	return 0
+}
+
+func (x *SkillGrowthResult) GetAfterLv() int32 {
+	if x != nil {
+		return x.AfterLv
+	}
+	return 0
+}
+
+func (x *SkillGrowthResult) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
 type PostActionResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Error *Error `protobuf:"bytes,1,opt,name=error,proto3" json:"error,omitempty"`
+	Error             *Error               `protobuf:"bytes,1,opt,name=error,proto3" json:"error,omitempty"`
+	EarnedItems       []*EarnedItems       `protobuf:"bytes,2,rep,name=earned_items,json=earnedItems,proto3" json:"earned_items,omitempty"`
+	ConsumedItems     []*ConsumedItems     `protobuf:"bytes,3,rep,name=consumed_items,json=consumedItems,proto3" json:"consumed_items,omitempty"`
+	SkillGrowthResult []*SkillGrowthResult `protobuf:"bytes,4,rep,name=skill_growth_result,json=skillGrowthResult,proto3" json:"skill_growth_result,omitempty"`
 }
 
 func (x *PostActionResponse) Reset() {
 	*x = PostActionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_gateway_schema_proto_msgTypes[6]
+		mi := &file_gateway_schema_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -494,7 +694,7 @@ func (x *PostActionResponse) String() string {
 func (*PostActionResponse) ProtoMessage() {}
 
 func (x *PostActionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_schema_proto_msgTypes[6]
+	mi := &file_gateway_schema_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -507,12 +707,33 @@ func (x *PostActionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostActionResponse.ProtoReflect.Descriptor instead.
 func (*PostActionResponse) Descriptor() ([]byte, []int) {
-	return file_gateway_schema_proto_rawDescGZIP(), []int{6}
+	return file_gateway_schema_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *PostActionResponse) GetError() *Error {
 	if x != nil {
 		return x.Error
+	}
+	return nil
+}
+
+func (x *PostActionResponse) GetEarnedItems() []*EarnedItems {
+	if x != nil {
+		return x.EarnedItems
+	}
+	return nil
+}
+
+func (x *PostActionResponse) GetConsumedItems() []*ConsumedItems {
+	if x != nil {
+		return x.ConsumedItems
+	}
+	return nil
+}
+
+func (x *PostActionResponse) GetSkillGrowthResult() []*SkillGrowthResult {
+	if x != nil {
+		return x.SkillGrowthResult
 	}
 	return nil
 }
@@ -529,7 +750,7 @@ type Error struct {
 func (x *Error) Reset() {
 	*x = Error{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_gateway_schema_proto_msgTypes[7]
+		mi := &file_gateway_schema_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -542,7 +763,7 @@ func (x *Error) String() string {
 func (*Error) ProtoMessage() {}
 
 func (x *Error) ProtoReflect() protoreflect.Message {
-	mi := &file_gateway_schema_proto_msgTypes[7]
+	mi := &file_gateway_schema_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -555,7 +776,7 @@ func (x *Error) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Error.ProtoReflect.Descriptor instead.
 func (*Error) Descriptor() ([]byte, []int) {
-	return file_gateway_schema_proto_rawDescGZIP(), []int{7}
+	return file_gateway_schema_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Error) GetErrorOccured() bool {
@@ -642,17 +863,50 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x65, 0x78, 0x70, 0x6c, 0x6f,
 	0x72, 0x65, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x65, 0x78, 0x65, 0x63, 0x5f, 0x63, 0x6f, 0x75,
 	0x6e, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x65, 0x78, 0x65, 0x63, 0x43, 0x6f,
-	0x75, 0x6e, 0x74, 0x22, 0x3a, 0x0a, 0x12, 0x50, 0x6f, 0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x24, 0x0a, 0x05, 0x65, 0x72, 0x72,
-	0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f,
-	0x73, 0x75, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22,
-	0x55, 0x0a, 0x05, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x23, 0x0a, 0x0d, 0x65, 0x72, 0x72, 0x6f,
-	0x72, 0x5f, 0x6f, 0x63, 0x63, 0x75, 0x72, 0x65, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x0c, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x4f, 0x63, 0x63, 0x75, 0x72, 0x65, 0x64, 0x12, 0x27, 0x0a,
-	0x0f, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77,
-	0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x75, 0x6e, 0x74, 0x22, 0x3c, 0x0a, 0x0b, 0x45, 0x61, 0x72, 0x6e, 0x65, 0x64, 0x49, 0x74, 0x65,
+	0x6d, 0x73, 0x12, 0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x22, 0x3e, 0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x73, 0x75, 0x6d, 0x65, 0x64, 0x49, 0x74, 0x65,
+	0x6d, 0x73, 0x12, 0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x22, 0xc5, 0x01, 0x0a, 0x11, 0x53, 0x6b, 0x69, 0x6c, 0x6c, 0x47, 0x72, 0x6f, 0x77, 0x74,
+	0x68, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x73, 0x6b, 0x69, 0x6c, 0x6c,
+	0x5f, 0x69, 0x64, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x6b, 0x69, 0x6c, 0x6c,
+	0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x5f, 0x65, 0x78, 0x70,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x45, 0x78,
+	0x70, 0x12, 0x1b, 0x0a, 0x09, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x5f, 0x6c, 0x76, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x4c, 0x76, 0x12, 0x1b,
+	0x0a, 0x09, 0x61, 0x66, 0x74, 0x65, 0x72, 0x5f, 0x65, 0x78, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x08, 0x61, 0x66, 0x74, 0x65, 0x72, 0x45, 0x78, 0x70, 0x12, 0x19, 0x0a, 0x08, 0x61,
+	0x66, 0x74, 0x65, 0x72, 0x5f, 0x6c, 0x76, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x61,
+	0x66, 0x74, 0x65, 0x72, 0x4c, 0x76, 0x12, 0x21, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61,
+	0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x69,
+	0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xfe, 0x01, 0x0a, 0x12, 0x50, 0x6f,
+	0x73, 0x74, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x24, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52,
+	0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x37, 0x0a, 0x0c, 0x65, 0x61, 0x72, 0x6e, 0x65, 0x64,
+	0x5f, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x72,
+	0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x45, 0x61, 0x72, 0x6e, 0x65, 0x64, 0x49, 0x74, 0x65,
+	0x6d, 0x73, 0x52, 0x0b, 0x65, 0x61, 0x72, 0x6e, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12,
+	0x3d, 0x0a, 0x0e, 0x63, 0x6f, 0x6e, 0x73, 0x75, 0x6d, 0x65, 0x64, 0x5f, 0x69, 0x74, 0x65, 0x6d,
+	0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73,
+	0x75, 0x2e, 0x43, 0x6f, 0x6e, 0x73, 0x75, 0x6d, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52,
+	0x0d, 0x63, 0x6f, 0x6e, 0x73, 0x75, 0x6d, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x4a,
+	0x0a, 0x13, 0x73, 0x6b, 0x69, 0x6c, 0x6c, 0x5f, 0x67, 0x72, 0x6f, 0x77, 0x74, 0x68, 0x5f, 0x72,
+	0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x72, 0x69,
+	0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x53, 0x6b, 0x69, 0x6c, 0x6c, 0x47, 0x72, 0x6f, 0x77, 0x74,
+	0x68, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x52, 0x11, 0x73, 0x6b, 0x69, 0x6c, 0x6c, 0x47, 0x72,
+	0x6f, 0x77, 0x74, 0x68, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x55, 0x0a, 0x05, 0x45, 0x72,
+	0x72, 0x6f, 0x72, 0x12, 0x23, 0x0a, 0x0d, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x5f, 0x6f, 0x63, 0x63,
+	0x75, 0x72, 0x65, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0c, 0x65, 0x72, 0x72, 0x6f,
+	0x72, 0x4f, 0x63, 0x63, 0x75, 0x72, 0x65, 0x64, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x69, 0x73, 0x70,
+	0x6c, 0x61, 0x79, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0e, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -667,7 +921,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -675,19 +929,25 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*EarningItem)(nil),                  // 3: ringosu.EarningItem
 	(*RequiredSkill)(nil),                // 4: ringosu.RequiredSkill
 	(*PostActionRequest)(nil),            // 5: ringosu.PostActionRequest
-	(*PostActionResponse)(nil),           // 6: ringosu.PostActionResponse
-	(*Error)(nil),                        // 7: ringosu.Error
+	(*EarnedItems)(nil),                  // 6: ringosu.EarnedItems
+	(*ConsumedItems)(nil),                // 7: ringosu.ConsumedItems
+	(*SkillGrowthResult)(nil),            // 8: ringosu.SkillGrowthResult
+	(*PostActionResponse)(nil),           // 9: ringosu.PostActionResponse
+	(*Error)(nil),                        // 10: ringosu.Error
 }
 var file_gateway_schema_proto_depIdxs = []int32{
-	2, // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
-	3, // 1: ringosu.GetStageActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
-	4, // 2: ringosu.GetStageActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
-	7, // 3: ringosu.PostActionResponse.error:type_name -> ringosu.Error
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
+	3,  // 1: ringosu.GetStageActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
+	4,  // 2: ringosu.GetStageActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
+	10, // 3: ringosu.PostActionResponse.error:type_name -> ringosu.Error
+	6,  // 4: ringosu.PostActionResponse.earned_items:type_name -> ringosu.EarnedItems
+	7,  // 5: ringosu.PostActionResponse.consumed_items:type_name -> ringosu.ConsumedItems
+	8,  // 6: ringosu.PostActionResponse.skill_growth_result:type_name -> ringosu.SkillGrowthResult
+	7,  // [7:7] is the sub-list for method output_type
+	7,  // [7:7] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -769,7 +1029,7 @@ func file_gateway_schema_proto_init() {
 			}
 		}
 		file_gateway_schema_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PostActionResponse); i {
+			switch v := v.(*EarnedItems); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -781,6 +1041,42 @@ func file_gateway_schema_proto_init() {
 			}
 		}
 		file_gateway_schema_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ConsumedItems); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SkillGrowthResult); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PostActionResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Error); i {
 			case 0:
 				return &v.state
@@ -799,7 +1095,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
