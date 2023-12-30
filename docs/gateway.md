@@ -10,11 +10,15 @@
     - [Error](#ringosu-Error)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
+    - [GetStageListRequest](#ringosu-GetStageListRequest)
+    - [GetStageListResponse](#ringosu-GetStageListResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
     - [SkillGrowthResult](#ringosu-SkillGrowthResult)
+    - [StageInformation](#ringosu-StageInformation)
+    - [UserExplore](#ringosu-UserExplore)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -132,6 +136,37 @@
 
 
 
+<a name="ringosu-GetStageListRequest"></a>
+
+### GetStageListRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetStageListResponse"></a>
+
+### GetStageListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stage_information | [StageInformation](#ringosu-StageInformation) | repeated |  |
+
+
+
+
+
+
 <a name="ringosu-PostActionRequest"></a>
 
 ### PostActionRequest
@@ -218,6 +253,43 @@
 | after_exp | [int32](#int32) |  |  |
 | after_lv | [int32](#int32) |  |  |
 | display_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-StageInformation"></a>
+
+### StageInformation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| stage_id | [string](#string) |  |  |
+| display_name | [string](#string) |  |  |
+| is_known | [bool](#bool) |  |  |
+| description | [string](#string) |  |  |
+| user_explore | [UserExplore](#ringosu-UserExplore) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-UserExplore"></a>
+
+### UserExplore
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| explore_id | [string](#string) |  |  |
+| display_name | [string](#string) |  |  |
+| is_known | [bool](#bool) |  |  |
+| is_possible | [bool](#bool) |  |  |
 
 
 
