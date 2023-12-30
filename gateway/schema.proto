@@ -79,3 +79,27 @@ message Error {
   bool error_occured = 1;
   string display_message = 2;
 }
+
+message GetStageListRequest {
+  string user_id = 1;
+  string token = 2;
+}
+
+message GetStageListResponse {
+  repeated StageInformation stage_information = 1;
+}
+
+message StageInformation {
+  string stage_id = 1;
+  string display_name = 2;
+  bool is_known = 3;
+  string description = 4;
+  repeated UserExplore user_explore = 5;
+}
+
+message UserExplore {
+  string explore_id = 1;
+  string display_name = 2;
+  bool is_known = 3;
+  bool is_possible = 4;
+}

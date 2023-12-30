@@ -793,6 +793,258 @@ func (x *Error) GetDisplayMessage() string {
 	return ""
 }
 
+type GetStageListRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Token  string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *GetStageListRequest) Reset() {
+	*x = GetStageListRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStageListRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStageListRequest) ProtoMessage() {}
+
+func (x *GetStageListRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStageListRequest.ProtoReflect.Descriptor instead.
+func (*GetStageListRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *GetStageListRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetStageListRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type GetStageListResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StageInformation []*StageInformation `protobuf:"bytes,1,rep,name=stage_information,json=stageInformation,proto3" json:"stage_information,omitempty"`
+}
+
+func (x *GetStageListResponse) Reset() {
+	*x = GetStageListResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStageListResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStageListResponse) ProtoMessage() {}
+
+func (x *GetStageListResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStageListResponse.ProtoReflect.Descriptor instead.
+func (*GetStageListResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *GetStageListResponse) GetStageInformation() []*StageInformation {
+	if x != nil {
+		return x.StageInformation
+	}
+	return nil
+}
+
+type StageInformation struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StageId     string         `protobuf:"bytes,1,opt,name=stage_id,json=stageId,proto3" json:"stage_id,omitempty"`
+	DisplayName string         `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	IsKnown     bool           `protobuf:"varint,3,opt,name=is_known,json=isKnown,proto3" json:"is_known,omitempty"`
+	Description string         `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	UserExplore []*UserExplore `protobuf:"bytes,5,rep,name=user_explore,json=userExplore,proto3" json:"user_explore,omitempty"`
+}
+
+func (x *StageInformation) Reset() {
+	*x = StageInformation{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StageInformation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageInformation) ProtoMessage() {}
+
+func (x *StageInformation) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageInformation.ProtoReflect.Descriptor instead.
+func (*StageInformation) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *StageInformation) GetStageId() string {
+	if x != nil {
+		return x.StageId
+	}
+	return ""
+}
+
+func (x *StageInformation) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *StageInformation) GetIsKnown() bool {
+	if x != nil {
+		return x.IsKnown
+	}
+	return false
+}
+
+func (x *StageInformation) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *StageInformation) GetUserExplore() []*UserExplore {
+	if x != nil {
+		return x.UserExplore
+	}
+	return nil
+}
+
+type UserExplore struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ExploreId   string `protobuf:"bytes,1,opt,name=explore_id,json=exploreId,proto3" json:"explore_id,omitempty"`
+	DisplayName string `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	IsKnown     bool   `protobuf:"varint,3,opt,name=is_known,json=isKnown,proto3" json:"is_known,omitempty"`
+	IsPossible  bool   `protobuf:"varint,4,opt,name=is_possible,json=isPossible,proto3" json:"is_possible,omitempty"`
+}
+
+func (x *UserExplore) Reset() {
+	*x = UserExplore{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserExplore) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserExplore) ProtoMessage() {}
+
+func (x *UserExplore) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserExplore.ProtoReflect.Descriptor instead.
+func (*UserExplore) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *UserExplore) GetExploreId() string {
+	if x != nil {
+		return x.ExploreId
+	}
+	return ""
+}
+
+func (x *UserExplore) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *UserExplore) GetIsKnown() bool {
+	if x != nil {
+		return x.IsKnown
+	}
+	return false
+}
+
+func (x *UserExplore) GetIsPossible() bool {
+	if x != nil {
+		return x.IsPossible
+	}
+	return false
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -905,8 +1157,40 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x72, 0x4f, 0x63, 0x63, 0x75, 0x72, 0x65, 0x64, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x69, 0x73, 0x70,
 	0x6c, 0x61, 0x79, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x0e, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x22, 0x44, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x53, 0x74, 0x61, 0x67, 0x65, 0x4c, 0x69, 0x73,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49,
+	0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x5e, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x53, 0x74,
+	0x61, 0x67, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x46, 0x0a, 0x11, 0x73, 0x74, 0x61, 0x67, 0x65, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x69, 0x6e,
+	0x67, 0x6f, 0x73, 0x75, 0x2e, 0x53, 0x74, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x72, 0x6d,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x10, 0x73, 0x74, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f,
+	0x72, 0x6d, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xc6, 0x01, 0x0a, 0x10, 0x53, 0x74, 0x61, 0x67,
+	0x65, 0x49, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x19, 0x0a, 0x08,
+	0x73, 0x74, 0x61, 0x67, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x73, 0x74, 0x61, 0x67, 0x65, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x70, 0x6c,
+	0x61, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64,
+	0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x69, 0x73,
+	0x5f, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x69, 0x73,
+	0x4b, 0x6e, 0x6f, 0x77, 0x6e, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x37, 0x0a, 0x0c, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x65, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x70, 0x6c,
+	0x6f, 0x72, 0x65, 0x52, 0x0b, 0x75, 0x73, 0x65, 0x72, 0x45, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65,
+	0x22, 0x8b, 0x01, 0x0a, 0x0b, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65,
+	0x12, 0x1d, 0x0a, 0x0a, 0x65, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x65, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65, 0x49, 0x64, 0x12,
+	0x21, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x69, 0x73, 0x5f, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x69, 0x73, 0x4b, 0x6e, 0x6f, 0x77, 0x6e, 0x12, 0x1f, 0x0a,
+	0x0b, 0x69, 0x73, 0x5f, 0x70, 0x6f, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x50, 0x6f, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x0a,
+	0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -921,7 +1205,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -934,6 +1218,10 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*SkillGrowthResult)(nil),            // 8: ringosu.SkillGrowthResult
 	(*PostActionResponse)(nil),           // 9: ringosu.PostActionResponse
 	(*Error)(nil),                        // 10: ringosu.Error
+	(*GetStageListRequest)(nil),          // 11: ringosu.GetStageListRequest
+	(*GetStageListResponse)(nil),         // 12: ringosu.GetStageListResponse
+	(*StageInformation)(nil),             // 13: ringosu.StageInformation
+	(*UserExplore)(nil),                  // 14: ringosu.UserExplore
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -943,11 +1231,13 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	6,  // 4: ringosu.PostActionResponse.earned_items:type_name -> ringosu.EarnedItems
 	7,  // 5: ringosu.PostActionResponse.consumed_items:type_name -> ringosu.ConsumedItems
 	8,  // 6: ringosu.PostActionResponse.skill_growth_result:type_name -> ringosu.SkillGrowthResult
-	7,  // [7:7] is the sub-list for method output_type
-	7,  // [7:7] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	13, // 7: ringosu.GetStageListResponse.stage_information:type_name -> ringosu.StageInformation
+	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -1088,6 +1378,54 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStageListRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStageListResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StageInformation); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserExplore); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1095,7 +1433,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
