@@ -12,6 +12,7 @@
     - [GetItemDetailResponse](#ringosu-GetItemDetailResponse)
     - [GetItemListRequest](#ringosu-GetItemListRequest)
     - [GetItemListResponse](#ringosu-GetItemListResponse)
+    - [GetItemListResponseRow](#ringosu-GetItemListResponseRow)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
@@ -157,6 +158,21 @@
 <a name="ringosu-GetItemListResponse"></a>
 
 ### GetItemListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_list | [GetItemListResponseRow](#ringosu-GetItemListResponseRow) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemListResponseRow"></a>
+
+### GetItemListResponseRow
 
 
 

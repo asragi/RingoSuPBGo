@@ -127,6 +127,10 @@ message GetItemListRequest {
 }
 
 message GetItemListResponse {
+  repeated GetItemListResponseRow item_list = 1;
+}
+
+message GetItemListResponseRow {
   string item_id = 1;
   string display_name = 2;
   int32 price = 3;
