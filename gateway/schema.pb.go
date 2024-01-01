@@ -1045,6 +1045,172 @@ func (x *UserExplore) GetIsPossible() bool {
 	return false
 }
 
+type GetItemDetailRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ItemId string `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Token  string `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *GetItemDetailRequest) Reset() {
+	*x = GetItemDetailRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetItemDetailRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetItemDetailRequest) ProtoMessage() {}
+
+func (x *GetItemDetailRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetItemDetailRequest.ProtoReflect.Descriptor instead.
+func (*GetItemDetailRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *GetItemDetailRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetItemDetailRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GetItemDetailRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type GetItemDetailResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId      string         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ItemId      string         `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Price       int32          `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
+	DisplayName string         `protobuf:"bytes,4,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	Description string         `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
+	MaxStock    int32          `protobuf:"varint,6,opt,name=max_stock,json=maxStock,proto3" json:"max_stock,omitempty"`
+	Stock       int32          `protobuf:"varint,7,opt,name=stock,proto3" json:"stock,omitempty"`
+	UserExplore []*UserExplore `protobuf:"bytes,8,rep,name=user_explore,json=userExplore,proto3" json:"user_explore,omitempty"`
+}
+
+func (x *GetItemDetailResponse) Reset() {
+	*x = GetItemDetailResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetItemDetailResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetItemDetailResponse) ProtoMessage() {}
+
+func (x *GetItemDetailResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetItemDetailResponse.ProtoReflect.Descriptor instead.
+func (*GetItemDetailResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *GetItemDetailResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetItemDetailResponse) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GetItemDetailResponse) GetPrice() int32 {
+	if x != nil {
+		return x.Price
+	}
+	return 0
+}
+
+func (x *GetItemDetailResponse) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *GetItemDetailResponse) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *GetItemDetailResponse) GetMaxStock() int32 {
+	if x != nil {
+		return x.MaxStock
+	}
+	return 0
+}
+
+func (x *GetItemDetailResponse) GetStock() int32 {
+	if x != nil {
+		return x.Stock
+	}
+	return 0
+}
+
+func (x *GetItemDetailResponse) GetUserExplore() []*UserExplore {
+	if x != nil {
+		return x.UserExplore
+	}
+	return nil
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -1188,9 +1354,32 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x69, 0x73, 0x5f, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x69, 0x73, 0x4b, 0x6e, 0x6f, 0x77, 0x6e, 0x12, 0x1f, 0x0a,
 	0x0b, 0x69, 0x73, 0x5f, 0x70, 0x6f, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x50, 0x6f, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x42, 0x0a,
-	0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x50, 0x6f, 0x73, 0x73, 0x69, 0x62, 0x6c, 0x65, 0x22, 0x5e,
+	0x0a, 0x14, 0x47, 0x65, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12,
+	0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x90,
+	0x02, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49,
+	0x64, 0x12, 0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x70, 0x72,
+	0x69, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x70, 0x72, 0x69, 0x63, 0x65,
+	0x12, 0x21, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e,
+	0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1b, 0x0a, 0x09, 0x6d, 0x61, 0x78, 0x5f, 0x73, 0x74, 0x6f,
+	0x63, 0x6b, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x6d, 0x61, 0x78, 0x53, 0x74, 0x6f,
+	0x63, 0x6b, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x6f, 0x63, 0x6b, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x05, 0x73, 0x74, 0x6f, 0x63, 0x6b, 0x12, 0x37, 0x0a, 0x0c, 0x75, 0x73, 0x65, 0x72,
+	0x5f, 0x65, 0x78, 0x70, 0x6c, 0x6f, 0x72, 0x65, 0x18, 0x08, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x45, 0x78, 0x70,
+	0x6c, 0x6f, 0x72, 0x65, 0x52, 0x0b, 0x75, 0x73, 0x65, 0x72, 0x45, 0x78, 0x70, 0x6c, 0x6f, 0x72,
+	0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1205,7 +1394,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -1222,6 +1411,8 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageListResponse)(nil),         // 12: ringosu.GetStageListResponse
 	(*StageInformation)(nil),             // 13: ringosu.StageInformation
 	(*UserExplore)(nil),                  // 14: ringosu.UserExplore
+	(*GetItemDetailRequest)(nil),         // 15: ringosu.GetItemDetailRequest
+	(*GetItemDetailResponse)(nil),        // 16: ringosu.GetItemDetailResponse
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -1233,11 +1424,12 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	8,  // 6: ringosu.PostActionResponse.skill_growth_result:type_name -> ringosu.SkillGrowthResult
 	13, // 7: ringosu.GetStageListResponse.stage_information:type_name -> ringosu.StageInformation
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
-	9,  // [9:9] is the sub-list for method output_type
-	9,  // [9:9] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -1426,6 +1618,30 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetItemDetailRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetItemDetailResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1433,7 +1649,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
