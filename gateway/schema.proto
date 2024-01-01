@@ -120,3 +120,16 @@ message GetItemDetailResponse {
   int32 stock = 7;
   repeated UserExplore user_explore = 8;
 }
+
+message GetItemListRequest {
+  string user_id = 1;
+  string token = 2;
+}
+
+message GetItemListResponse {
+  string item_id = 1;
+  string display_name = 2;
+  int32 price = 3;
+  int32 stock = 4;
+  int32 max_stock = 5;
+}

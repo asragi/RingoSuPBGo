@@ -10,6 +10,8 @@
     - [Error](#ringosu-Error)
     - [GetItemDetailRequest](#ringosu-GetItemDetailRequest)
     - [GetItemDetailResponse](#ringosu-GetItemDetailResponse)
+    - [GetItemListRequest](#ringosu-GetItemListRequest)
+    - [GetItemListResponse](#ringosu-GetItemListResponse)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
@@ -130,6 +132,41 @@
 | max_stock | [int32](#int32) |  |  |
 | stock | [int32](#int32) |  |  |
 | user_explore | [UserExplore](#ringosu-UserExplore) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemListRequest"></a>
+
+### GetItemListRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemListResponse"></a>
+
+### GetItemListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| item_id | [string](#string) |  |  |
+| display_name | [string](#string) |  |  |
+| price | [int32](#int32) |  |  |
+| stock | [int32](#int32) |  |  |
+| max_stock | [int32](#int32) |  |  |
 
 
 
