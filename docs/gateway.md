@@ -8,6 +8,8 @@
     - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
     - [Error](#ringosu-Error)
+    - [GetItemDetailRequest](#ringosu-GetItemDetailRequest)
+    - [GetItemDetailResponse](#ringosu-GetItemDetailResponse)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
@@ -89,6 +91,45 @@
 | ----- | ---- | ----- | ----------- |
 | error_occured | [bool](#bool) |  |  |
 | display_message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemDetailRequest"></a>
+
+### GetItemDetailRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| item_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemDetailResponse"></a>
+
+### GetItemDetailResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| item_id | [string](#string) |  |  |
+| price | [int32](#int32) |  |  |
+| display_name | [string](#string) |  |  |
+| description | [string](#string) |  |  |
+| max_stock | [int32](#int32) |  |  |
+| stock | [int32](#int32) |  |  |
+| user_explore | [UserExplore](#ringosu-UserExplore) | repeated |  |
 
 
 

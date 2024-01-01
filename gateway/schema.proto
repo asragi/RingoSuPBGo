@@ -103,3 +103,20 @@ message UserExplore {
   bool is_known = 3;
   bool is_possible = 4;
 }
+
+message GetItemDetailRequest {
+  string user_id = 1;
+  string item_id = 2;
+  string token = 3;
+}
+
+message GetItemDetailResponse {
+  string user_id = 1;
+  string item_id = 2;
+  int32 price = 3;
+  string display_name = 4;
+  string description = 5;
+  int32 max_stock = 6;
+  int32 stock = 7;
+  repeated UserExplore user_explore = 8;
+}
