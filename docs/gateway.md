@@ -13,6 +13,8 @@
     - [GetItemListRequest](#ringosu-GetItemListRequest)
     - [GetItemListResponse](#ringosu-GetItemListResponse)
     - [GetItemListResponseRow](#ringosu-GetItemListResponseRow)
+    - [GetResourceRequest](#ringosu-GetResourceRequest)
+    - [GetResourceResponse](#ringosu-GetResourceResponse)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
@@ -183,6 +185,40 @@
 | price | [int32](#int32) |  |  |
 | stock | [int32](#int32) |  |  |
 | max_stock | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetResourceRequest"></a>
+
+### GetResourceRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetResourceResponse"></a>
+
+### GetResourceResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| max_stamina | [int32](#int32) |  |  |
+| fund | [int32](#int32) |  |  |
+| recover_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 
 
 
