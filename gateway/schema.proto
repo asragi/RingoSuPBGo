@@ -150,3 +150,22 @@ message GetResourceRequest {
   string user_id = 1;
   string token = 2;
 }
+
+message GetItemActionDetailRequest {
+  string user_id = 1;
+  string item_id = 2;
+  string explore_id = 3;
+  string access_token = 4;
+}
+
+message GetItemActionDetailResponse {
+  string user_id = 1;
+  string item_id = 2;
+  string display_name = 3;
+  string action_display_name = 4;
+  int32 required_payment = 5;
+  int32 required_stamina = 6;
+  repeated RequiredItem required_items = 7;
+  repeated EarningItem earning_items = 8;
+  repeated RequiredSkill required_skills = 9;
+}

@@ -8,6 +8,8 @@
     - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
     - [Error](#ringosu-Error)
+    - [GetItemActionDetailRequest](#ringosu-GetItemActionDetailRequest)
+    - [GetItemActionDetailResponse](#ringosu-GetItemActionDetailResponse)
     - [GetItemDetailRequest](#ringosu-GetItemDetailRequest)
     - [GetItemDetailResponse](#ringosu-GetItemDetailResponse)
     - [GetItemListRequest](#ringosu-GetItemListRequest)
@@ -96,6 +98,47 @@
 | ----- | ---- | ----- | ----------- |
 | error_occured | [bool](#bool) |  |  |
 | display_message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemActionDetailRequest"></a>
+
+### GetItemActionDetailRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| item_id | [string](#string) |  |  |
+| explore_id | [string](#string) |  |  |
+| access_token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetItemActionDetailResponse"></a>
+
+### GetItemActionDetailResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| item_id | [string](#string) |  |  |
+| display_name | [string](#string) |  |  |
+| action_display_name | [string](#string) |  |  |
+| required_payment | [int32](#int32) |  |  |
+| required_stamina | [int32](#int32) |  |  |
+| required_items | [RequiredItem](#ringosu-RequiredItem) | repeated |  |
+| earning_items | [EarningItem](#ringosu-EarningItem) | repeated |  |
+| required_skills | [RequiredSkill](#ringosu-RequiredSkill) | repeated |  |
 
 
 

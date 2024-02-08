@@ -1519,6 +1519,188 @@ func (x *GetResourceRequest) GetToken() string {
 	return ""
 }
 
+type GetItemActionDetailRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId      string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ItemId      string `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ExploreId   string `protobuf:"bytes,3,opt,name=explore_id,json=exploreId,proto3" json:"explore_id,omitempty"`
+	AccessToken string `protobuf:"bytes,4,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+}
+
+func (x *GetItemActionDetailRequest) Reset() {
+	*x = GetItemActionDetailRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetItemActionDetailRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetItemActionDetailRequest) ProtoMessage() {}
+
+func (x *GetItemActionDetailRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetItemActionDetailRequest.ProtoReflect.Descriptor instead.
+func (*GetItemActionDetailRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetItemActionDetailRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailRequest) GetExploreId() string {
+	if x != nil {
+		return x.ExploreId
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailRequest) GetAccessToken() string {
+	if x != nil {
+		return x.AccessToken
+	}
+	return ""
+}
+
+type GetItemActionDetailResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId            string           `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ItemId            string           `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	DisplayName       string           `protobuf:"bytes,3,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	ActionDisplayName string           `protobuf:"bytes,4,opt,name=action_display_name,json=actionDisplayName,proto3" json:"action_display_name,omitempty"`
+	RequiredPayment   int32            `protobuf:"varint,5,opt,name=required_payment,json=requiredPayment,proto3" json:"required_payment,omitempty"`
+	RequiredStamina   int32            `protobuf:"varint,6,opt,name=required_stamina,json=requiredStamina,proto3" json:"required_stamina,omitempty"`
+	RequiredItems     []*RequiredItem  `protobuf:"bytes,7,rep,name=required_items,json=requiredItems,proto3" json:"required_items,omitempty"`
+	EarningItems      []*EarningItem   `protobuf:"bytes,8,rep,name=earning_items,json=earningItems,proto3" json:"earning_items,omitempty"`
+	RequiredSkills    []*RequiredSkill `protobuf:"bytes,9,rep,name=required_skills,json=requiredSkills,proto3" json:"required_skills,omitempty"`
+}
+
+func (x *GetItemActionDetailResponse) Reset() {
+	*x = GetItemActionDetailResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetItemActionDetailResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetItemActionDetailResponse) ProtoMessage() {}
+
+func (x *GetItemActionDetailResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetItemActionDetailResponse.ProtoReflect.Descriptor instead.
+func (*GetItemActionDetailResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetItemActionDetailResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailResponse) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailResponse) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailResponse) GetActionDisplayName() string {
+	if x != nil {
+		return x.ActionDisplayName
+	}
+	return ""
+}
+
+func (x *GetItemActionDetailResponse) GetRequiredPayment() int32 {
+	if x != nil {
+		return x.RequiredPayment
+	}
+	return 0
+}
+
+func (x *GetItemActionDetailResponse) GetRequiredStamina() int32 {
+	if x != nil {
+		return x.RequiredStamina
+	}
+	return 0
+}
+
+func (x *GetItemActionDetailResponse) GetRequiredItems() []*RequiredItem {
+	if x != nil {
+		return x.RequiredItems
+	}
+	return nil
+}
+
+func (x *GetItemActionDetailResponse) GetEarningItems() []*EarningItem {
+	if x != nil {
+		return x.EarningItems
+	}
+	return nil
+}
+
+func (x *GetItemActionDetailResponse) GetRequiredSkills() []*RequiredSkill {
+	if x != nil {
+		return x.RequiredSkills
+	}
+	return nil
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -1722,8 +1904,45 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f,
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64,
 	0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77,
-	0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x90, 0x01, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x49, 0x74,
+	0x65, 0x6d, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x17,
+	0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x65, 0x78, 0x70, 0x6c, 0x6f,
+	0x72, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x65, 0x78, 0x70,
+	0x6c, 0x6f, 0x72, 0x65, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73,
+	0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63,
+	0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0xb2, 0x03, 0x0a, 0x1b, 0x47, 0x65,
+	0x74, 0x49, 0x74, 0x65, 0x6d, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x65, 0x74, 0x61, 0x69,
+	0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65,
+	0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
+	0x49, 0x64, 0x12, 0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x64,
+	0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2e,
+	0x0a, 0x13, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79,
+	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x11, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x44, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x29,
+	0x0a, 0x10, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x5f, 0x70, 0x61, 0x79, 0x6d, 0x65,
+	0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72,
+	0x65, 0x64, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x29, 0x0a, 0x10, 0x72, 0x65, 0x71,
+	0x75, 0x69, 0x72, 0x65, 0x64, 0x5f, 0x73, 0x74, 0x61, 0x6d, 0x69, 0x6e, 0x61, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x0f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x53, 0x74, 0x61,
+	0x6d, 0x69, 0x6e, 0x61, 0x12, 0x3c, 0x0a, 0x0e, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64,
+	0x5f, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x72,
+	0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x49,
+	0x74, 0x65, 0x6d, 0x52, 0x0d, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x49, 0x74, 0x65,
+	0x6d, 0x73, 0x12, 0x39, 0x0a, 0x0d, 0x65, 0x61, 0x72, 0x6e, 0x69, 0x6e, 0x67, 0x5f, 0x69, 0x74,
+	0x65, 0x6d, 0x73, 0x18, 0x08, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x72, 0x69, 0x6e, 0x67,
+	0x6f, 0x73, 0x75, 0x2e, 0x45, 0x61, 0x72, 0x6e, 0x69, 0x6e, 0x67, 0x49, 0x74, 0x65, 0x6d, 0x52,
+	0x0c, 0x65, 0x61, 0x72, 0x6e, 0x69, 0x6e, 0x67, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x3f, 0x0a,
+	0x0f, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x5f, 0x73, 0x6b, 0x69, 0x6c, 0x6c, 0x73,
+	0x18, 0x09, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75,
+	0x2e, 0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x53, 0x6b, 0x69, 0x6c, 0x6c, 0x52, 0x0e,
+	0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x53, 0x6b, 0x69, 0x6c, 0x6c, 0x73, 0x42, 0x0a,
+	0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -1738,7 +1957,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -1762,7 +1981,9 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetItemListResponseRow)(nil),       // 19: ringosu.GetItemListResponseRow
 	(*GetResourceResponse)(nil),          // 20: ringosu.GetResourceResponse
 	(*GetResourceRequest)(nil),           // 21: ringosu.GetResourceRequest
-	(*timestamp.Timestamp)(nil),          // 22: google.protobuf.Timestamp
+	(*GetItemActionDetailRequest)(nil),   // 22: ringosu.GetItemActionDetailRequest
+	(*GetItemActionDetailResponse)(nil),  // 23: ringosu.GetItemActionDetailResponse
+	(*timestamp.Timestamp)(nil),          // 24: google.protobuf.Timestamp
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -1776,12 +1997,15 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
 	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
 	19, // 10: ringosu.GetItemListResponse.item_list:type_name -> ringosu.GetItemListResponseRow
-	22, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	24, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
+	2,  // 12: ringosu.GetItemActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
+	3,  // 13: ringosu.GetItemActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
+	4,  // 14: ringosu.GetItemActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -2054,6 +2278,30 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetItemActionDetailRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetItemActionDetailResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2061,7 +2309,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
