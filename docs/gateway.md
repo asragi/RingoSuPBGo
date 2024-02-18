@@ -25,6 +25,7 @@
     - [LoginResponse](#ringosu-LoginResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
+    - [RegisterUserResponse](#ringosu-RegisterUserResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
     - [SkillGrowthResult](#ringosu-SkillGrowthResult)
@@ -397,6 +398,22 @@
 | earned_items | [EarnedItems](#ringosu-EarnedItems) | repeated |  |
 | consumed_items | [ConsumedItems](#ringosu-ConsumedItems) | repeated |  |
 | skill_growth_result | [SkillGrowthResult](#ringosu-SkillGrowthResult) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-RegisterUserResponse"></a>
+
+### RegisterUserResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| row_password | [string](#string) |  |  |
 
 
 
