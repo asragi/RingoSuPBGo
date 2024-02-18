@@ -1755,6 +1755,61 @@ func (x *LoginResponse) GetAccessToken() string {
 	return ""
 }
 
+type RegisterUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId      string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RowPassword string `protobuf:"bytes,2,opt,name=row_password,json=rowPassword,proto3" json:"row_password,omitempty"`
+}
+
+func (x *RegisterUserResponse) Reset() {
+	*x = RegisterUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RegisterUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterUserResponse) ProtoMessage() {}
+
+func (x *RegisterUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterUserResponse.ProtoReflect.Descriptor instead.
+func (*RegisterUserResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *RegisterUserResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RegisterUserResponse) GetRowPassword() string {
+	if x != nil {
+		return x.RowPassword
+	}
+	return ""
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -1994,8 +2049,13 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x67, 0x6f, 0x73, 0x75, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f,
 	0x72, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65,
 	0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54,
-	0x6f, 0x6b, 0x65, 0x6e, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x52, 0x0a, 0x14, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x17, 0x0a, 0x07,
+	0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75,
+	0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x72, 0x6f, 0x77, 0x5f, 0x70, 0x61, 0x73,
+	0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x72, 0x6f, 0x77,
+	0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74,
+	0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2010,7 +2070,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -2038,7 +2098,8 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetItemActionDetailResponse)(nil),  // 23: ringosu.GetItemActionDetailResponse
 	(*LoginRequest)(nil),                 // 24: ringosu.LoginRequest
 	(*LoginResponse)(nil),                // 25: ringosu.LoginResponse
-	(*timestamp.Timestamp)(nil),          // 26: google.protobuf.Timestamp
+	(*RegisterUserResponse)(nil),         // 26: ringosu.RegisterUserResponse
+	(*timestamp.Timestamp)(nil),          // 27: google.protobuf.Timestamp
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -2052,7 +2113,7 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
 	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
 	19, // 10: ringosu.GetItemListResponse.item_list:type_name -> ringosu.GetItemListResponseRow
-	26, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
+	27, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
 	2,  // 12: ringosu.GetItemActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
 	3,  // 13: ringosu.GetItemActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
 	4,  // 14: ringosu.GetItemActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
@@ -2382,6 +2443,18 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RegisterUserResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2389,7 +2462,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   26,
+			NumMessages:   27,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
