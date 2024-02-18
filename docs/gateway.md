@@ -21,6 +21,8 @@
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
     - [GetStageListResponse](#ringosu-GetStageListResponse)
+    - [LoginRequest](#ringosu-LoginRequest)
+    - [LoginResponse](#ringosu-LoginResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
     - [RequiredItem](#ringosu-RequiredItem)
@@ -96,7 +98,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error_occured | [bool](#bool) |  |  |
+| error_occurred | [bool](#bool) |  |  |
 | display_message | [string](#string) |  |  |
 
 
@@ -112,7 +114,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | item_id | [string](#string) |  |  |
 | explore_id | [string](#string) |  |  |
 | access_token | [string](#string) |  |  |
@@ -153,7 +154,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | item_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 
@@ -192,7 +192,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 
 
@@ -242,7 +241,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 
 
@@ -276,7 +274,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | stage_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 | explore_id | [string](#string) |  |  |
@@ -317,7 +314,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 
 
@@ -340,6 +336,38 @@
 
 
 
+<a name="ringosu-LoginRequest"></a>
+
+### LoginRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| row_password | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-LoginResponse"></a>
+
+### LoginResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
+| access_token | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="ringosu-PostActionRequest"></a>
 
 ### PostActionRequest
@@ -348,7 +376,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
 | token | [string](#string) |  |  |
 | explore_id | [string](#string) |  |  |
 | exec_count | [int32](#int32) |  |  |
