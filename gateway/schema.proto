@@ -6,7 +6,6 @@ package ringosu;
 option go_package = "/gateway";
 
 message GetStageActionDetailRequest {
-  string user_id = 1;
   string stage_id = 2;
   string token = 3;
   string explore_id = 4;
@@ -44,7 +43,6 @@ message RequiredSkill {
 }
 
 message PostActionRequest {
-  string user_id = 1;
   string token = 2;
   string explore_id = 3;
   int32 exec_count = 4;
@@ -77,12 +75,11 @@ message PostActionResponse {
 }
 
 message Error {
-  bool error_occured = 1;
+  bool error_occurred = 1;
   string display_message = 2;
 }
 
 message GetStageListRequest {
-  string user_id = 1;
   string token = 2;
 }
 
@@ -106,7 +103,6 @@ message UserExplore {
 }
 
 message GetItemDetailRequest {
-  string user_id = 1;
   string item_id = 2;
   string token = 3;
 }
@@ -123,7 +119,6 @@ message GetItemDetailResponse {
 }
 
 message GetItemListRequest {
-  string user_id = 1;
   string token = 2;
 }
 
@@ -147,12 +142,10 @@ message GetResourceResponse {
 }
 
 message GetResourceRequest {
-  string user_id = 1;
   string token = 2;
 }
 
 message GetItemActionDetailRequest {
-  string user_id = 1;
   string item_id = 2;
   string explore_id = 3;
   string access_token = 4;
@@ -168,4 +161,14 @@ message GetItemActionDetailResponse {
   repeated RequiredItem required_items = 7;
   repeated EarningItem earning_items = 8;
   repeated RequiredSkill required_skills = 9;
+}
+
+message LoginRequest {
+  string user_id = 1;
+  string row_password = 2;
+}
+
+message LoginResponse {
+  Error error = 1;
+  string access_token = 2;
 }
