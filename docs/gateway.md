@@ -28,8 +28,13 @@
     - [RegisterUserResponse](#ringosu-RegisterUserResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
+    - [Reservation](#ringosu-Reservation)
     - [SkillGrowthResult](#ringosu-SkillGrowthResult)
     - [StageInformation](#ringosu-StageInformation)
+    - [UpdateShelfContentRequest](#ringosu-UpdateShelfContentRequest)
+    - [UpdateShelfContentResponse](#ringosu-UpdateShelfContentResponse)
+    - [UpdateShelfSizeRequest](#ringosu-UpdateShelfSizeRequest)
+    - [UpdateShelfSizeResponse](#ringosu-UpdateShelfSizeResponse)
     - [UserExplore](#ringosu-UserExplore)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -456,6 +461,25 @@
 
 
 
+<a name="ringosu-Reservation"></a>
+
+### Reservation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| reservation_id | [string](#string) |  |  |
+| user_id | [string](#string) |  |  |
+| index | [int32](#int32) |  |  |
+| purchase_num | [int32](#int32) |  |  |
+| scheduled_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
 <a name="ringosu-SkillGrowthResult"></a>
 
 ### SkillGrowthResult
@@ -489,6 +513,74 @@
 | is_known | [bool](#bool) |  |  |
 | description | [string](#string) |  |  |
 | user_explore | [UserExplore](#ringosu-UserExplore) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShelfContentRequest"></a>
+
+### UpdateShelfContentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| index | [int32](#int32) |  |  |
+| set_price | [int32](#int32) |  |  |
+| item_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShelfContentResponse"></a>
+
+### UpdateShelfContentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
+| index | [int32](#int32) |  |  |
+| set_price | [int32](#int32) |  |  |
+| item_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShelfSizeRequest"></a>
+
+### UpdateShelfSizeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| size | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShelfSizeResponse"></a>
+
+### UpdateShelfSizeResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
+| size | [int32](#int32) |  |  |
 
 
 

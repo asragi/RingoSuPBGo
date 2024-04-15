@@ -177,3 +177,35 @@ message RegisterUserResponse {
   string user_id = 1;
   string row_password = 2;
 }
+
+message Reservation {
+  string reservation_id = 1;
+  string user_id = 2;
+  int32 index = 3;
+  int32 purchase_num = 4;
+  google.protobuf.Timestamp scheduled_time = 5;
+}
+
+message UpdateShelfContentRequest {
+  string token = 1;
+  int32 index = 2;
+  int32 set_price = 3;
+  string item_id = 4;
+}
+
+message UpdateShelfContentResponse {
+  Error error = 1;
+  int32 index = 2;
+  int32 set_price = 3;
+  string item_id = 4;
+}
+
+message UpdateShelfSizeRequest {
+  string token = 1;
+  int32 size = 2;
+}
+
+message UpdateShelfSizeResponse {
+  Error error = 1;
+  int32 size = 2;
+}
