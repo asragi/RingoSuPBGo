@@ -549,6 +549,7 @@
 | index | [int32](#int32) |  |  |
 | set_price | [int32](#int32) |  |  |
 | item_id | [string](#string) |  |  |
+| reservations | [Reservation](#ringosu-Reservation) | repeated |  |
 
 
 

@@ -198,6 +198,7 @@ message UpdateShelfContentResponse {
   int32 index = 2;
   int32 set_price = 3;
   string item_id = 4;
+  repeated Reservation reservations = 5;
 }
 
 message UpdateShelfSizeRequest {
