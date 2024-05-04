@@ -210,3 +210,39 @@ message UpdateShelfSizeResponse {
   Error error = 1;
   int32 size = 2;
 }
+
+message GetMyShelfRequest {
+  string token = 1;
+}
+
+message GetMyShelfResponse {
+  repeated Shelf shelves = 1;
+}
+
+message Shelf {
+  int32 index = 1;
+  int32 set_price = 2;
+  string item_id = 3;
+  string display_name = 4;
+  int32 stock = 5;
+  int32 max_stock = 6;
+  string user_id = 7;
+  string shelf_id = 8;
+}
+
+message GetShopsRequest {
+  string token = 1;
+  int32 page = 2;
+  int32 limit = 3;
+}
+
+message GetShopsResponse {
+  repeated Shop shop = 1;
+}
+
+message Shop {
+  string user_id = 1;
+  string user_name = 2;
+  int32 rank = 3;
+  repeated Shelf shelves = 4;
+}
