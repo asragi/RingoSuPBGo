@@ -2149,6 +2149,384 @@ func (x *UpdateShelfSizeResponse) GetSize() int32 {
 	return 0
 }
 
+type GetMyShelfRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *GetMyShelfRequest) Reset() {
+	*x = GetMyShelfRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMyShelfRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMyShelfRequest) ProtoMessage() {}
+
+func (x *GetMyShelfRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMyShelfRequest.ProtoReflect.Descriptor instead.
+func (*GetMyShelfRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *GetMyShelfRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type GetMyShelfResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Shelves []*Shelf `protobuf:"bytes,1,rep,name=shelves,proto3" json:"shelves,omitempty"`
+}
+
+func (x *GetMyShelfResponse) Reset() {
+	*x = GetMyShelfResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMyShelfResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMyShelfResponse) ProtoMessage() {}
+
+func (x *GetMyShelfResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMyShelfResponse.ProtoReflect.Descriptor instead.
+func (*GetMyShelfResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *GetMyShelfResponse) GetShelves() []*Shelf {
+	if x != nil {
+		return x.Shelves
+	}
+	return nil
+}
+
+type Shelf struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Index       int32  `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
+	SetPrice    int32  `protobuf:"varint,2,opt,name=set_price,json=setPrice,proto3" json:"set_price,omitempty"`
+	ItemId      string `protobuf:"bytes,3,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	DisplayName string `protobuf:"bytes,4,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	Stock       int32  `protobuf:"varint,5,opt,name=stock,proto3" json:"stock,omitempty"`
+	MaxStock    int32  `protobuf:"varint,6,opt,name=max_stock,json=maxStock,proto3" json:"max_stock,omitempty"`
+	UserId      string `protobuf:"bytes,7,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ShelfId     string `protobuf:"bytes,8,opt,name=shelf_id,json=shelfId,proto3" json:"shelf_id,omitempty"`
+}
+
+func (x *Shelf) Reset() {
+	*x = Shelf{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Shelf) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Shelf) ProtoMessage() {}
+
+func (x *Shelf) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Shelf.ProtoReflect.Descriptor instead.
+func (*Shelf) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *Shelf) GetIndex() int32 {
+	if x != nil {
+		return x.Index
+	}
+	return 0
+}
+
+func (x *Shelf) GetSetPrice() int32 {
+	if x != nil {
+		return x.SetPrice
+	}
+	return 0
+}
+
+func (x *Shelf) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *Shelf) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *Shelf) GetStock() int32 {
+	if x != nil {
+		return x.Stock
+	}
+	return 0
+}
+
+func (x *Shelf) GetMaxStock() int32 {
+	if x != nil {
+		return x.MaxStock
+	}
+	return 0
+}
+
+func (x *Shelf) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *Shelf) GetShelfId() string {
+	if x != nil {
+		return x.ShelfId
+	}
+	return ""
+}
+
+type GetShopsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Page  int32  `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`
+	Limit int32  `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *GetShopsRequest) Reset() {
+	*x = GetShopsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetShopsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetShopsRequest) ProtoMessage() {}
+
+func (x *GetShopsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetShopsRequest.ProtoReflect.Descriptor instead.
+func (*GetShopsRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *GetShopsRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *GetShopsRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetShopsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetShopsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Shop []*Shop `protobuf:"bytes,1,rep,name=shop,proto3" json:"shop,omitempty"`
+}
+
+func (x *GetShopsResponse) Reset() {
+	*x = GetShopsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetShopsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetShopsResponse) ProtoMessage() {}
+
+func (x *GetShopsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetShopsResponse.ProtoReflect.Descriptor instead.
+func (*GetShopsResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *GetShopsResponse) GetShop() []*Shop {
+	if x != nil {
+		return x.Shop
+	}
+	return nil
+}
+
+type Shop struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId   string   `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserName string   `protobuf:"bytes,2,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	Rank     int32    `protobuf:"varint,3,opt,name=rank,proto3" json:"rank,omitempty"`
+	Shelves  []*Shelf `protobuf:"bytes,4,rep,name=shelves,proto3" json:"shelves,omitempty"`
+}
+
+func (x *Shop) Reset() {
+	*x = Shop{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Shop) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Shop) ProtoMessage() {}
+
+func (x *Shop) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Shop.ProtoReflect.Descriptor instead.
+func (*Shop) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *Shop) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *Shop) GetUserName() string {
+	if x != nil {
+		return x.UserName
+	}
+	return ""
+}
+
+func (x *Shop) GetRank() int32 {
+	if x != nil {
+		return x.Rank
+	}
+	return 0
+}
+
+func (x *Shop) GetShelves() []*Shelf {
+	if x != nil {
+		return x.Shelves
+	}
+	return nil
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -2436,8 +2814,45 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72,
 	0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65, 0x72,
 	0x72, 0x6f, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65,
-	0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x05, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x22, 0x29, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x4d, 0x79,
+	0x53, 0x68, 0x65, 0x6c, 0x66, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b,
+	0x65, 0x6e, 0x22, 0x3e, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x4d, 0x79, 0x53, 0x68, 0x65, 0x6c, 0x66,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x07, 0x73, 0x68, 0x65, 0x6c,
+	0x76, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67,
+	0x6f, 0x73, 0x75, 0x2e, 0x53, 0x68, 0x65, 0x6c, 0x66, 0x52, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x76,
+	0x65, 0x73, 0x22, 0xdd, 0x01, 0x0a, 0x05, 0x53, 0x68, 0x65, 0x6c, 0x66, 0x12, 0x14, 0x0a, 0x05,
+	0x69, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x69, 0x6e, 0x64,
+	0x65, 0x78, 0x12, 0x1b, 0x0a, 0x09, 0x73, 0x65, 0x74, 0x5f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x73, 0x65, 0x74, 0x50, 0x72, 0x69, 0x63, 0x65, 0x12,
+	0x17, 0x0a, 0x07, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x69, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x70,
+	0x6c, 0x61, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x64, 0x69, 0x73, 0x70, 0x6c, 0x61, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x73,
+	0x74, 0x6f, 0x63, 0x6b, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x73, 0x74, 0x6f, 0x63,
+	0x6b, 0x12, 0x1b, 0x0a, 0x09, 0x6d, 0x61, 0x78, 0x5f, 0x73, 0x74, 0x6f, 0x63, 0x6b, 0x18, 0x06,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x6d, 0x61, 0x78, 0x53, 0x74, 0x6f, 0x63, 0x6b, 0x12, 0x17,
+	0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x73, 0x68, 0x65, 0x6c, 0x66,
+	0x5f, 0x69, 0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x66,
+	0x49, 0x64, 0x22, 0x51, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x68, 0x6f, 0x70, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x70,
+	0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05,
+	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x35, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x68, 0x6f, 0x70,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x21, 0x0a, 0x04, 0x73, 0x68, 0x6f,
+	0x70, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73,
+	0x75, 0x2e, 0x53, 0x68, 0x6f, 0x70, 0x52, 0x04, 0x73, 0x68, 0x6f, 0x70, 0x22, 0x7a, 0x0a, 0x04,
+	0x53, 0x68, 0x6f, 0x70, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1b, 0x0a,
+	0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x72, 0x61,
+	0x6e, 0x6b, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x72, 0x61, 0x6e, 0x6b, 0x12, 0x28,
+	0x0a, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x76, 0x65, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x53, 0x68, 0x65, 0x6c, 0x66, 0x52,
+	0x07, 0x73, 0x68, 0x65, 0x6c, 0x76, 0x65, 0x73, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74,
+	0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2452,7 +2867,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 32)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -2486,7 +2901,13 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*UpdateShelfContentResponse)(nil),   // 29: ringosu.UpdateShelfContentResponse
 	(*UpdateShelfSizeRequest)(nil),       // 30: ringosu.UpdateShelfSizeRequest
 	(*UpdateShelfSizeResponse)(nil),      // 31: ringosu.UpdateShelfSizeResponse
-	(*timestamp.Timestamp)(nil),          // 32: google.protobuf.Timestamp
+	(*GetMyShelfRequest)(nil),            // 32: ringosu.GetMyShelfRequest
+	(*GetMyShelfResponse)(nil),           // 33: ringosu.GetMyShelfResponse
+	(*Shelf)(nil),                        // 34: ringosu.Shelf
+	(*GetShopsRequest)(nil),              // 35: ringosu.GetShopsRequest
+	(*GetShopsResponse)(nil),             // 36: ringosu.GetShopsResponse
+	(*Shop)(nil),                         // 37: ringosu.Shop
+	(*timestamp.Timestamp)(nil),          // 38: google.protobuf.Timestamp
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -2500,20 +2921,23 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
 	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
 	19, // 10: ringosu.GetItemListResponse.item_list:type_name -> ringosu.GetItemListResponseRow
-	32, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
+	38, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
 	2,  // 12: ringosu.GetItemActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
 	3,  // 13: ringosu.GetItemActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
 	4,  // 14: ringosu.GetItemActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
 	10, // 15: ringosu.LoginResponse.error:type_name -> ringosu.Error
-	32, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
+	38, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
 	10, // 17: ringosu.UpdateShelfContentResponse.error:type_name -> ringosu.Error
 	27, // 18: ringosu.UpdateShelfContentResponse.reservations:type_name -> ringosu.Reservation
 	10, // 19: ringosu.UpdateShelfSizeResponse.error:type_name -> ringosu.Error
-	20, // [20:20] is the sub-list for method output_type
-	20, // [20:20] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	34, // 20: ringosu.GetMyShelfResponse.shelves:type_name -> ringosu.Shelf
+	37, // 21: ringosu.GetShopsResponse.shop:type_name -> ringosu.Shop
+	34, // 22: ringosu.Shop.shelves:type_name -> ringosu.Shelf
+	23, // [23:23] is the sub-list for method output_type
+	23, // [23:23] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -2906,6 +3330,78 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetMyShelfRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetMyShelfResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Shelf); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetShopsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetShopsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Shop); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2913,7 +3409,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   32,
+			NumMessages:   38,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

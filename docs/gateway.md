@@ -15,8 +15,12 @@
     - [GetItemListRequest](#ringosu-GetItemListRequest)
     - [GetItemListResponse](#ringosu-GetItemListResponse)
     - [GetItemListResponseRow](#ringosu-GetItemListResponseRow)
+    - [GetMyShelfRequest](#ringosu-GetMyShelfRequest)
+    - [GetMyShelfResponse](#ringosu-GetMyShelfResponse)
     - [GetResourceRequest](#ringosu-GetResourceRequest)
     - [GetResourceResponse](#ringosu-GetResourceResponse)
+    - [GetShopsRequest](#ringosu-GetShopsRequest)
+    - [GetShopsResponse](#ringosu-GetShopsResponse)
     - [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest)
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
@@ -29,6 +33,8 @@
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
     - [Reservation](#ringosu-Reservation)
+    - [Shelf](#ringosu-Shelf)
+    - [Shop](#ringosu-Shop)
     - [SkillGrowthResult](#ringosu-SkillGrowthResult)
     - [StageInformation](#ringosu-StageInformation)
     - [UpdateShelfContentRequest](#ringosu-UpdateShelfContentRequest)
@@ -239,6 +245,36 @@
 
 
 
+<a name="ringosu-GetMyShelfRequest"></a>
+
+### GetMyShelfRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetMyShelfResponse"></a>
+
+### GetMyShelfResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| shelves | [Shelf](#ringosu-Shelf) | repeated |  |
+
+
+
+
+
+
 <a name="ringosu-GetResourceRequest"></a>
 
 ### GetResourceRequest
@@ -266,6 +302,38 @@
 | max_stamina | [int32](#int32) |  |  |
 | fund | [int32](#int32) |  |  |
 | recover_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetShopsRequest"></a>
+
+### GetShopsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| page | [int32](#int32) |  |  |
+| limit | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetShopsResponse"></a>
+
+### GetShopsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| shop | [Shop](#ringosu-Shop) | repeated |  |
 
 
 
@@ -474,6 +542,46 @@
 | index | [int32](#int32) |  |  |
 | purchase_num | [int32](#int32) |  |  |
 | scheduled_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="ringosu-Shelf"></a>
+
+### Shelf
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| index | [int32](#int32) |  |  |
+| set_price | [int32](#int32) |  |  |
+| item_id | [string](#string) |  |  |
+| display_name | [string](#string) |  |  |
+| stock | [int32](#int32) |  |  |
+| max_stock | [int32](#int32) |  |  |
+| user_id | [string](#string) |  |  |
+| shelf_id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-Shop"></a>
+
+### Shop
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| user_name | [string](#string) |  |  |
+| rank | [int32](#int32) |  |  |
+| shelves | [Shelf](#ringosu-Shelf) | repeated |  |
 
 
 
