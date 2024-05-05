@@ -41,6 +41,8 @@
     - [UpdateShelfContentResponse](#ringosu-UpdateShelfContentResponse)
     - [UpdateShelfSizeRequest](#ringosu-UpdateShelfSizeRequest)
     - [UpdateShelfSizeResponse](#ringosu-UpdateShelfSizeResponse)
+    - [UpdateUserNameRequest](#ringosu-UpdateUserNameRequest)
+    - [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse)
     - [UserExplore](#ringosu-UserExplore)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -690,6 +692,38 @@
 | ----- | ---- | ----- | ----------- |
 | error | [Error](#ringosu-Error) |  |  |
 | size | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateUserNameRequest"></a>
+
+### UpdateUserNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| user_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateUserNameResponse"></a>
+
+### UpdateUserNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
+| user_name | [string](#string) |  |  |
 
 
 

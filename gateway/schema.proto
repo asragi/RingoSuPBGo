@@ -246,3 +246,13 @@ message Shop {
   int32 rank = 3;
   repeated Shelf shelves = 4;
 }
+
+message UpdateUserNameRequest {
+  string token = 1;
+  string user_name = 2;
+}
+
+message UpdateUserNameResponse {
+  Error error = 1;
+  string user_name = 2;
+}
