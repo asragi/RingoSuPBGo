@@ -256,3 +256,12 @@ message UpdateUserNameResponse {
   Error error = 1;
   string user_name = 2;
 }
+message UpdateShopNameRequest {
+  string token = 1;
+  string shop_name = 2;
+}
+
+message UpdateShopNameResponse {
+  Error error = 1;
+  string shop_name = 2;
+}
