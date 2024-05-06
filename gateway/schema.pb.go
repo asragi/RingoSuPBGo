@@ -2637,6 +2637,116 @@ func (x *UpdateUserNameResponse) GetUserName() string {
 	return ""
 }
 
+type UpdateShopNameRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token    string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	ShopName string `protobuf:"bytes,2,opt,name=shop_name,json=shopName,proto3" json:"shop_name,omitempty"`
+}
+
+func (x *UpdateShopNameRequest) Reset() {
+	*x = UpdateShopNameRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateShopNameRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateShopNameRequest) ProtoMessage() {}
+
+func (x *UpdateShopNameRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateShopNameRequest.ProtoReflect.Descriptor instead.
+func (*UpdateShopNameRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *UpdateShopNameRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *UpdateShopNameRequest) GetShopName() string {
+	if x != nil {
+		return x.ShopName
+	}
+	return ""
+}
+
+type UpdateShopNameResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Error    *Error `protobuf:"bytes,1,opt,name=error,proto3" json:"error,omitempty"`
+	ShopName string `protobuf:"bytes,2,opt,name=shop_name,json=shopName,proto3" json:"shop_name,omitempty"`
+}
+
+func (x *UpdateShopNameResponse) Reset() {
+	*x = UpdateShopNameResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[41]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateShopNameResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateShopNameResponse) ProtoMessage() {}
+
+func (x *UpdateShopNameResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[41]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateShopNameResponse.ProtoReflect.Descriptor instead.
+func (*UpdateShopNameResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *UpdateShopNameResponse) GetError() *Error {
+	if x != nil {
+		return x.Error
+	}
+	return nil
+}
+
+func (x *UpdateShopNameResponse) GetShopName() string {
+	if x != nil {
+		return x.ShopName
+	}
+	return ""
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -2972,8 +3082,18 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65,
 	0x72, 0x72, 0x6f, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d,
-	0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x22, 0x4a, 0x0a, 0x15, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x68, 0x6f, 0x70, 0x4e,
+	0x61, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
+	0x12, 0x1b, 0x0a, 0x09, 0x73, 0x68, 0x6f, 0x70, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x08, 0x73, 0x68, 0x6f, 0x70, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x5b, 0x0a,
+	0x16, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x68, 0x6f, 0x70, 0x4e, 0x61, 0x6d, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x24, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75,
+	0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x1b, 0x0a,
+	0x09, 0x73, 0x68, 0x6f, 0x70, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x08, 0x73, 0x68, 0x6f, 0x70, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67,
+	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2988,7 +3108,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -3030,7 +3150,9 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*Shop)(nil),                         // 37: ringosu.Shop
 	(*UpdateUserNameRequest)(nil),        // 38: ringosu.UpdateUserNameRequest
 	(*UpdateUserNameResponse)(nil),       // 39: ringosu.UpdateUserNameResponse
-	(*timestamp.Timestamp)(nil),          // 40: google.protobuf.Timestamp
+	(*UpdateShopNameRequest)(nil),        // 40: ringosu.UpdateShopNameRequest
+	(*UpdateShopNameResponse)(nil),       // 41: ringosu.UpdateShopNameResponse
+	(*timestamp.Timestamp)(nil),          // 42: google.protobuf.Timestamp
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -3044,12 +3166,12 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
 	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
 	19, // 10: ringosu.GetItemListResponse.item_list:type_name -> ringosu.GetItemListResponseRow
-	40, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
+	42, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
 	2,  // 12: ringosu.GetItemActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
 	3,  // 13: ringosu.GetItemActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
 	4,  // 14: ringosu.GetItemActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
 	10, // 15: ringosu.LoginResponse.error:type_name -> ringosu.Error
-	40, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
+	42, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
 	10, // 17: ringosu.UpdateShelfContentResponse.error:type_name -> ringosu.Error
 	27, // 18: ringosu.UpdateShelfContentResponse.reservations:type_name -> ringosu.Reservation
 	10, // 19: ringosu.UpdateShelfSizeResponse.error:type_name -> ringosu.Error
@@ -3057,11 +3179,12 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	37, // 21: ringosu.GetShopsResponse.shop:type_name -> ringosu.Shop
 	34, // 22: ringosu.Shop.shelves:type_name -> ringosu.Shelf
 	10, // 23: ringosu.UpdateUserNameResponse.error:type_name -> ringosu.Error
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	10, // 24: ringosu.UpdateShopNameResponse.error:type_name -> ringosu.Error
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -3550,6 +3673,30 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateShopNameRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateShopNameResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -3557,7 +3704,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   40,
+			NumMessages:   42,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

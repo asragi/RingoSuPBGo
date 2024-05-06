@@ -41,6 +41,8 @@
     - [UpdateShelfContentResponse](#ringosu-UpdateShelfContentResponse)
     - [UpdateShelfSizeRequest](#ringosu-UpdateShelfSizeRequest)
     - [UpdateShelfSizeResponse](#ringosu-UpdateShelfSizeResponse)
+    - [UpdateShopNameRequest](#ringosu-UpdateShopNameRequest)
+    - [UpdateShopNameResponse](#ringosu-UpdateShopNameResponse)
     - [UpdateUserNameRequest](#ringosu-UpdateUserNameRequest)
     - [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse)
     - [UserExplore](#ringosu-UserExplore)
@@ -692,6 +694,38 @@
 | ----- | ---- | ----- | ----------- |
 | error | [Error](#ringosu-Error) |  |  |
 | size | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShopNameRequest"></a>
+
+### UpdateShopNameRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| shop_name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-UpdateShopNameResponse"></a>
+
+### UpdateShopNameResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| error | [Error](#ringosu-Error) |  |  |
+| shop_name | [string](#string) |  |  |
 
 
 
