@@ -2747,6 +2747,187 @@ func (x *UpdateShopNameResponse) GetShopName() string {
 	return ""
 }
 
+type GetDailyRankingRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Limit  int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+}
+
+func (x *GetDailyRankingRequest) Reset() {
+	*x = GetDailyRankingRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[42]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetDailyRankingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDailyRankingRequest) ProtoMessage() {}
+
+func (x *GetDailyRankingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[42]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDailyRankingRequest.ProtoReflect.Descriptor instead.
+func (*GetDailyRankingRequest) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *GetDailyRankingRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *GetDailyRankingRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type GetDailyRankingResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Ranking []*RankingRow `protobuf:"bytes,1,rep,name=ranking,proto3" json:"ranking,omitempty"`
+}
+
+func (x *GetDailyRankingResponse) Reset() {
+	*x = GetDailyRankingResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetDailyRankingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDailyRankingResponse) ProtoMessage() {}
+
+func (x *GetDailyRankingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDailyRankingResponse.ProtoReflect.Descriptor instead.
+func (*GetDailyRankingResponse) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *GetDailyRankingResponse) GetRanking() []*RankingRow {
+	if x != nil {
+		return x.Ranking
+	}
+	return nil
+}
+
+type RankingRow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserId     string   `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserName   string   `protobuf:"bytes,2,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	Rank       int32    `protobuf:"varint,3,opt,name=rank,proto3" json:"rank,omitempty"`
+	TotalScore int32    `protobuf:"varint,4,opt,name=total_score,json=totalScore,proto3" json:"total_score,omitempty"`
+	Shelves    []*Shelf `protobuf:"bytes,5,rep,name=shelves,proto3" json:"shelves,omitempty"`
+}
+
+func (x *RankingRow) Reset() {
+	*x = RankingRow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_gateway_schema_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RankingRow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RankingRow) ProtoMessage() {}
+
+func (x *RankingRow) ProtoReflect() protoreflect.Message {
+	mi := &file_gateway_schema_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RankingRow.ProtoReflect.Descriptor instead.
+func (*RankingRow) Descriptor() ([]byte, []int) {
+	return file_gateway_schema_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *RankingRow) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RankingRow) GetUserName() string {
+	if x != nil {
+		return x.UserName
+	}
+	return ""
+}
+
+func (x *RankingRow) GetRank() int32 {
+	if x != nil {
+		return x.Rank
+	}
+	return 0
+}
+
+func (x *RankingRow) GetTotalScore() int32 {
+	if x != nil {
+		return x.TotalScore
+	}
+	return 0
+}
+
+func (x *RankingRow) GetShelves() []*Shelf {
+	if x != nil {
+		return x.Shelves
+	}
+	return nil
+}
+
 var File_gateway_schema_proto protoreflect.FileDescriptor
 
 var file_gateway_schema_proto_rawDesc = []byte{
@@ -3092,8 +3273,28 @@ var file_gateway_schema_proto_rawDesc = []byte{
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75,
 	0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x1b, 0x0a,
 	0x09, 0x73, 0x68, 0x6f, 0x70, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x08, 0x73, 0x68, 0x6f, 0x70, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67,
-	0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x08, 0x73, 0x68, 0x6f, 0x70, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x46, 0x0a, 0x16, 0x47, 0x65,
+	0x74, 0x44, 0x61, 0x69, 0x6c, 0x79, 0x52, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73,
+	0x65, 0x74, 0x22, 0x48, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x44, 0x61, 0x69, 0x6c, 0x79, 0x52, 0x61,
+	0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2d, 0x0a,
+	0x07, 0x72, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x13,
+	0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73, 0x75, 0x2e, 0x52, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67,
+	0x52, 0x6f, 0x77, 0x52, 0x07, 0x72, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x22, 0xa1, 0x01, 0x0a,
+	0x0a, 0x52, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x52, 0x6f, 0x77, 0x12, 0x17, 0x0a, 0x07, 0x75,
+	0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73,
+	0x65, 0x72, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x72, 0x61, 0x6e, 0x6b, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x04, 0x72, 0x61, 0x6e, 0x6b, 0x12, 0x1f, 0x0a, 0x0b, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x5f, 0x73,
+	0x63, 0x6f, 0x72, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x74, 0x6f, 0x74, 0x61,
+	0x6c, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x28, 0x0a, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x76, 0x65,
+	0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x72, 0x69, 0x6e, 0x67, 0x6f, 0x73,
+	0x75, 0x2e, 0x53, 0x68, 0x65, 0x6c, 0x66, 0x52, 0x07, 0x73, 0x68, 0x65, 0x6c, 0x76, 0x65, 0x73,
+	0x42, 0x0a, 0x5a, 0x08, 0x2f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3108,7 +3309,7 @@ func file_gateway_schema_proto_rawDescGZIP() []byte {
 	return file_gateway_schema_proto_rawDescData
 }
 
-var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
+var file_gateway_schema_proto_msgTypes = make([]protoimpl.MessageInfo, 45)
 var file_gateway_schema_proto_goTypes = []interface{}{
 	(*GetStageActionDetailRequest)(nil),  // 0: ringosu.GetStageActionDetailRequest
 	(*GetStageActionDetailResponse)(nil), // 1: ringosu.GetStageActionDetailResponse
@@ -3152,7 +3353,10 @@ var file_gateway_schema_proto_goTypes = []interface{}{
 	(*UpdateUserNameResponse)(nil),       // 39: ringosu.UpdateUserNameResponse
 	(*UpdateShopNameRequest)(nil),        // 40: ringosu.UpdateShopNameRequest
 	(*UpdateShopNameResponse)(nil),       // 41: ringosu.UpdateShopNameResponse
-	(*timestamp.Timestamp)(nil),          // 42: google.protobuf.Timestamp
+	(*GetDailyRankingRequest)(nil),       // 42: ringosu.GetDailyRankingRequest
+	(*GetDailyRankingResponse)(nil),      // 43: ringosu.GetDailyRankingResponse
+	(*RankingRow)(nil),                   // 44: ringosu.RankingRow
+	(*timestamp.Timestamp)(nil),          // 45: google.protobuf.Timestamp
 }
 var file_gateway_schema_proto_depIdxs = []int32{
 	2,  // 0: ringosu.GetStageActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
@@ -3166,12 +3370,12 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	14, // 8: ringosu.StageInformation.user_explore:type_name -> ringosu.UserExplore
 	14, // 9: ringosu.GetItemDetailResponse.user_explore:type_name -> ringosu.UserExplore
 	19, // 10: ringosu.GetItemListResponse.item_list:type_name -> ringosu.GetItemListResponseRow
-	42, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
+	45, // 11: ringosu.GetResourceResponse.recover_time:type_name -> google.protobuf.Timestamp
 	2,  // 12: ringosu.GetItemActionDetailResponse.required_items:type_name -> ringosu.RequiredItem
 	3,  // 13: ringosu.GetItemActionDetailResponse.earning_items:type_name -> ringosu.EarningItem
 	4,  // 14: ringosu.GetItemActionDetailResponse.required_skills:type_name -> ringosu.RequiredSkill
 	10, // 15: ringosu.LoginResponse.error:type_name -> ringosu.Error
-	42, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
+	45, // 16: ringosu.Reservation.scheduled_time:type_name -> google.protobuf.Timestamp
 	10, // 17: ringosu.UpdateShelfContentResponse.error:type_name -> ringosu.Error
 	27, // 18: ringosu.UpdateShelfContentResponse.reservations:type_name -> ringosu.Reservation
 	10, // 19: ringosu.UpdateShelfSizeResponse.error:type_name -> ringosu.Error
@@ -3180,11 +3384,13 @@ var file_gateway_schema_proto_depIdxs = []int32{
 	34, // 22: ringosu.Shop.shelves:type_name -> ringosu.Shelf
 	10, // 23: ringosu.UpdateUserNameResponse.error:type_name -> ringosu.Error
 	10, // 24: ringosu.UpdateShopNameResponse.error:type_name -> ringosu.Error
-	25, // [25:25] is the sub-list for method output_type
-	25, // [25:25] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	44, // 25: ringosu.GetDailyRankingResponse.ranking:type_name -> ringosu.RankingRow
+	34, // 26: ringosu.RankingRow.shelves:type_name -> ringosu.Shelf
+	27, // [27:27] is the sub-list for method output_type
+	27, // [27:27] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_gateway_schema_proto_init() }
@@ -3697,6 +3903,42 @@ func file_gateway_schema_proto_init() {
 				return nil
 			}
 		}
+		file_gateway_schema_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetDailyRankingRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetDailyRankingResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_gateway_schema_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RankingRow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -3704,7 +3946,7 @@ func file_gateway_schema_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_gateway_schema_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   42,
+			NumMessages:   45,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
