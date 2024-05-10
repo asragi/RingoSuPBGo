@@ -8,6 +8,8 @@
     - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
     - [Error](#ringosu-Error)
+    - [GetDailyRankingRequest](#ringosu-GetDailyRankingRequest)
+    - [GetDailyRankingResponse](#ringosu-GetDailyRankingResponse)
     - [GetItemActionDetailRequest](#ringosu-GetItemActionDetailRequest)
     - [GetItemActionDetailResponse](#ringosu-GetItemActionDetailResponse)
     - [GetItemDetailRequest](#ringosu-GetItemDetailRequest)
@@ -29,6 +31,7 @@
     - [LoginResponse](#ringosu-LoginResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
+    - [RankingRow](#ringosu-RankingRow)
     - [RegisterUserResponse](#ringosu-RegisterUserResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
@@ -116,6 +119,37 @@
 | ----- | ---- | ----- | ----------- |
 | error_occurred | [bool](#bool) |  |  |
 | display_message | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetDailyRankingRequest"></a>
+
+### GetDailyRankingRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [int32](#int32) |  |  |
+| offset | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="ringosu-GetDailyRankingResponse"></a>
+
+### GetDailyRankingResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ranking | [RankingRow](#ringosu-RankingRow) | repeated |  |
 
 
 
@@ -475,6 +509,25 @@
 | earned_items | [EarnedItems](#ringosu-EarnedItems) | repeated |  |
 | consumed_items | [ConsumedItems](#ringosu-ConsumedItems) | repeated |  |
 | skill_growth_result | [SkillGrowthResult](#ringosu-SkillGrowthResult) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-RankingRow"></a>
+
+### RankingRow
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| user_name | [string](#string) |  |  |
+| rank | [int32](#int32) |  |  |
+| total_score | [int32](#int32) |  |  |
+| shelves | [Shelf](#ringosu-Shelf) | repeated |  |
 
 
 
