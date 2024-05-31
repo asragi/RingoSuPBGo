@@ -173,6 +173,12 @@ message LoginResponse {
   string access_token = 2;
 }
 
+service Register {
+  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
+}
+
+message RegisterUserRequest {}
+
 message RegisterUserResponse {
   string user_id = 1;
   string row_password = 2;

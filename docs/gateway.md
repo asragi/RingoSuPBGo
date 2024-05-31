@@ -32,6 +32,7 @@
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
     - [RankingRow](#ringosu-RankingRow)
+    - [RegisterUserRequest](#ringosu-RegisterUserRequest)
     - [RegisterUserResponse](#ringosu-RegisterUserResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
@@ -49,6 +50,8 @@
     - [UpdateUserNameRequest](#ringosu-UpdateUserNameRequest)
     - [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse)
     - [UserExplore](#ringosu-UserExplore)
+  
+    - [Register](#ringosu-Register)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -534,6 +537,16 @@
 
 
 
+<a name="ringosu-RegisterUserRequest"></a>
+
+### RegisterUserRequest
+
+
+
+
+
+
+
 <a name="ringosu-RegisterUserResponse"></a>
 
 ### RegisterUserResponse
@@ -839,6 +852,16 @@
  
 
  
+
+
+<a name="ringosu-Register"></a>
+
+### Register
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| RegisterUser | [RegisterUserRequest](#ringosu-RegisterUserRequest) | [RegisterUserResponse](#ringosu-RegisterUserResponse) |  |
 
  
 
