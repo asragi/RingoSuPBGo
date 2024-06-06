@@ -7,7 +7,6 @@
     - [ConsumedItems](#ringosu-ConsumedItems)
     - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
-    - [Error](#ringosu-Error)
     - [GetDailyRankingRequest](#ringosu-GetDailyRankingRequest)
     - [GetDailyRankingResponse](#ringosu-GetDailyRankingResponse)
     - [GetItemActionDetailRequest](#ringosu-GetItemActionDetailRequest)
@@ -32,13 +31,13 @@
     - [PostActionRequest](#ringosu-PostActionRequest)
     - [PostActionResponse](#ringosu-PostActionResponse)
     - [RankingRow](#ringosu-RankingRow)
-    - [RegisterUserRequest](#ringosu-RegisterUserRequest)
-    - [RegisterUserResponse](#ringosu-RegisterUserResponse)
     - [RequiredItem](#ringosu-RequiredItem)
     - [RequiredSkill](#ringosu-RequiredSkill)
     - [Reservation](#ringosu-Reservation)
     - [Shelf](#ringosu-Shelf)
     - [Shop](#ringosu-Shop)
+    - [SignUpRequest](#ringosu-SignUpRequest)
+    - [SignUpResponse](#ringosu-SignUpResponse)
     - [SkillGrowthResult](#ringosu-SkillGrowthResult)
     - [StageInformation](#ringosu-StageInformation)
     - [UpdateShelfContentRequest](#ringosu-UpdateShelfContentRequest)
@@ -51,7 +50,7 @@
     - [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse)
     - [UserExplore](#ringosu-UserExplore)
   
-    - [Register](#ringosu-Register)
+    - [Ringo](#ringosu-Ringo)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -106,22 +105,6 @@
 | ----- | ---- | ----- | ----------- |
 | item_id | [string](#string) |  |  |
 | is_known | [bool](#bool) |  |  |
-
-
-
-
-
-
-<a name="ringosu-Error"></a>
-
-### Error
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| error_occurred | [bool](#bool) |  |  |
-| display_message | [string](#string) |  |  |
 
 
 
@@ -475,7 +458,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | access_token | [string](#string) |  |  |
 
 
@@ -508,7 +490,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | earned_items | [EarnedItems](#ringosu-EarnedItems) | repeated |  |
 | consumed_items | [ConsumedItems](#ringosu-ConsumedItems) | repeated |  |
 | skill_growth_result | [SkillGrowthResult](#ringosu-SkillGrowthResult) | repeated |  |
@@ -531,32 +512,6 @@
 | rank | [int32](#int32) |  |  |
 | total_score | [int32](#int32) |  |  |
 | shelves | [Shelf](#ringosu-Shelf) | repeated |  |
-
-
-
-
-
-
-<a name="ringosu-RegisterUserRequest"></a>
-
-### RegisterUserRequest
-
-
-
-
-
-
-
-<a name="ringosu-RegisterUserResponse"></a>
-
-### RegisterUserResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| user_id | [string](#string) |  |  |
-| row_password | [string](#string) |  |  |
 
 
 
@@ -658,6 +613,32 @@
 
 
 
+<a name="ringosu-SignUpRequest"></a>
+
+### SignUpRequest
+
+
+
+
+
+
+
+<a name="ringosu-SignUpResponse"></a>
+
+### SignUpResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| row_password | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="ringosu-SkillGrowthResult"></a>
 
 ### SkillGrowthResult
@@ -723,7 +704,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | index | [int32](#int32) |  |  |
 | set_price | [int32](#int32) |  |  |
 | item_id | [string](#string) |  |  |
@@ -758,7 +738,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | size | [int32](#int32) |  |  |
 
 
@@ -790,7 +769,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | shop_name | [string](#string) |  |  |
 
 
@@ -822,7 +800,6 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| error | [Error](#ringosu-Error) |  |  |
 | user_name | [string](#string) |  |  |
 
 
@@ -854,14 +831,29 @@
  
 
 
-<a name="ringosu-Register"></a>
+<a name="ringosu-Ringo"></a>
 
-### Register
+### Ringo
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| RegisterUser | [RegisterUserRequest](#ringosu-RegisterUserRequest) | [RegisterUserResponse](#ringosu-RegisterUserResponse) |  |
+| SignUp | [SignUpRequest](#ringosu-SignUpRequest) | [SignUpResponse](#ringosu-SignUpResponse) |  |
+| Login | [LoginRequest](#ringosu-LoginRequest) | [LoginResponse](#ringosu-LoginResponse) |  |
+| GetResource | [GetResourceRequest](#ringosu-GetResourceRequest) | [GetResourceResponse](#ringosu-GetResourceResponse) |  |
+| UpdateUserName | [UpdateUserNameRequest](#ringosu-UpdateUserNameRequest) | [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse) |  |
+| UpdateShopName | [UpdateShopNameRequest](#ringosu-UpdateShopNameRequest) | [UpdateShopNameResponse](#ringosu-UpdateShopNameResponse) |  |
+| GetMyShelf | [GetMyShelfRequest](#ringosu-GetMyShelfRequest) | [GetMyShelfResponse](#ringosu-GetMyShelfResponse) |  |
+| GetStageList | [GetStageListRequest](#ringosu-GetStageListRequest) | [GetStageListResponse](#ringosu-GetStageListResponse) |  |
+| GetStageActionDetail | [GetStageActionDetailRequest](#ringosu-GetStageActionDetailRequest) | [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse) |  |
+| PostAction | [PostActionRequest](#ringosu-PostActionRequest) | [PostActionResponse](#ringosu-PostActionResponse) |  |
+| GetItemList | [GetItemListRequest](#ringosu-GetItemListRequest) | [GetItemListResponse](#ringosu-GetItemListResponse) |  |
+| GetItemDetail | [GetItemDetailRequest](#ringosu-GetItemDetailRequest) | [GetItemDetailResponse](#ringosu-GetItemDetailResponse) |  |
+| GetItemActionDetail | [GetItemActionDetailRequest](#ringosu-GetItemActionDetailRequest) | [GetItemActionDetailResponse](#ringosu-GetItemActionDetailResponse) |  |
+| UpdateShelfContent | [UpdateShelfContentRequest](#ringosu-UpdateShelfContentRequest) | [UpdateShelfContentResponse](#ringosu-UpdateShelfContentResponse) |  |
+| UpdateShelfSize | [UpdateShelfSizeRequest](#ringosu-UpdateShelfSizeRequest) | [UpdateShelfSizeResponse](#ringosu-UpdateShelfSizeResponse) |  |
+| GetShops | [GetShopsRequest](#ringosu-GetShopsRequest) | [GetShopsResponse](#ringosu-GetShopsResponse) |  |
+| GetDailyRanking | [GetDailyRankingRequest](#ringosu-GetDailyRankingRequest) | [GetDailyRankingResponse](#ringosu-GetDailyRankingResponse) |  |
 
  
 
