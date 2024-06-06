@@ -5,6 +5,86 @@ package ringosu;
 
 option go_package = "/gateway";
 
+message SignUpRequest {}
+
+message SignUpResponse {
+  string user_id = 1;
+  string row_password = 2;
+}
+
+message LoginRequest {
+  string user_id = 1;
+  string row_password = 2;
+}
+
+message LoginResponse {
+  string access_token = 2;
+}
+
+message GetResourceRequest {
+  string token = 2;
+}
+
+message GetResourceResponse {
+  string user_id = 1;
+  int32 max_stamina = 2;
+  int32 fund = 3;
+  google.protobuf.Timestamp recover_time = 4;
+}
+
+message UpdateUserNameRequest {
+  string token = 1;
+  string user_name = 2;
+}
+
+message UpdateUserNameResponse {
+  string user_name = 2;
+}
+
+message UpdateShopNameRequest {
+  string token = 1;
+  string shop_name = 2;
+}
+
+message UpdateShopNameResponse {
+  string shop_name = 2;
+}
+
+message GetMyShelfRequest {
+  string token = 1;
+}
+
+message GetMyShelfResponse {
+  repeated Shelf shelves = 1;
+}
+
+message Shelf {
+  int32 index = 1;
+  int32 set_price = 2;
+  string item_id = 3;
+  string display_name = 4;
+  int32 stock = 5;
+  int32 max_stock = 6;
+  string user_id = 7;
+  string shelf_id = 8;
+}
+
+message GetStageListRequest {
+  string token = 2;
+}
+
+message GetStageListResponse {
+  repeated StageInformation stage_information = 1;
+}
+
+message StageInformation {
+  string stage_id = 1;
+  string display_name = 2;
+  bool is_known = 3;
+  string description = 4;
+  repeated UserExplore user_explore = 5;
+}
+
 message GetStageActionDetailRequest {
   string stage_id = 2;
   string token = 3;
@@ -42,12 +122,6 @@ message RequiredSkill {
   int32 required_lv = 4;
 }
 
-message PostActionRequest {
-  string token = 2;
-  string explore_id = 3;
-  int32 exec_count = 4;
-}
-
 message EarnedItems {
   string item_id = 10;
   int32 count = 1;
@@ -56,6 +130,12 @@ message EarnedItems {
 message ConsumedItems {
   string item_id = 10;
   int32 count = 1;
+}
+
+message PostActionRequest {
+  string token = 2;
+  string explore_id = 3;
+  int32 exec_count = 4;
 }
 
 message SkillGrowthResult {
@@ -68,31 +148,25 @@ message SkillGrowthResult {
 }
 
 message PostActionResponse {
-  Error error = 1;
   repeated EarnedItems earned_items = 2;
   repeated ConsumedItems consumed_items = 3;
   repeated SkillGrowthResult skill_growth_result = 4;
 }
 
-message Error {
-  bool error_occurred = 1;
-  string display_message = 2;
-}
-
-message GetStageListRequest {
+message GetItemListRequest {
   string token = 2;
 }
 
-message GetStageListResponse {
-  repeated StageInformation stage_information = 1;
+message GetItemListResponse {
+  repeated GetItemListResponseRow item_list = 1;
 }
 
-message StageInformation {
-  string stage_id = 1;
+message GetItemListResponseRow {
+  string item_id = 1;
   string display_name = 2;
-  bool is_known = 3;
-  string description = 4;
-  repeated UserExplore user_explore = 5;
+  int32 price = 3;
+  int32 stock = 4;
+  int32 max_stock = 5;
 }
 
 message UserExplore {
@@ -118,33 +192,6 @@ message GetItemDetailResponse {
   repeated UserExplore user_explore = 8;
 }
 
-message GetItemListRequest {
-  string token = 2;
-}
-
-message GetItemListResponse {
-  repeated GetItemListResponseRow item_list = 1;
-}
-
-message GetItemListResponseRow {
-  string item_id = 1;
-  string display_name = 2;
-  int32 price = 3;
-  int32 stock = 4;
-  int32 max_stock = 5;
-}
-
-message GetResourceResponse {
-  string user_id = 1;
-  int32 max_stamina = 2;
-  int32 fund = 3;
-  google.protobuf.Timestamp recover_time = 4;
-}
-
-message GetResourceRequest {
-  string token = 2;
-}
-
 message GetItemActionDetailRequest {
   string item_id = 2;
   string explore_id = 3;
@@ -163,27 +210,6 @@ message GetItemActionDetailResponse {
   repeated RequiredSkill required_skills = 9;
 }
 
-message LoginRequest {
-  string user_id = 1;
-  string row_password = 2;
-}
-
-message LoginResponse {
-  Error error = 1;
-  string access_token = 2;
-}
-
-service Register {
-  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
-}
-
-message RegisterUserRequest {}
-
-message RegisterUserResponse {
-  string user_id = 1;
-  string row_password = 2;
-}
-
 message Reservation {
   string reservation_id = 1;
   string user_id = 2;
@@ -200,7 +226,6 @@ message UpdateShelfContentRequest {
 }
 
 message UpdateShelfContentResponse {
-  Error error = 1;
   int32 index = 2;
   int32 set_price = 3;
   string item_id = 4;
@@ -213,27 +238,7 @@ message UpdateShelfSizeRequest {
 }
 
 message UpdateShelfSizeResponse {
-  Error error = 1;
   int32 size = 2;
-}
-
-message GetMyShelfRequest {
-  string token = 1;
-}
-
-message GetMyShelfResponse {
-  repeated Shelf shelves = 1;
-}
-
-message Shelf {
-  int32 index = 1;
-  int32 set_price = 2;
-  string item_id = 3;
-  string display_name = 4;
-  int32 stock = 5;
-  int32 max_stock = 6;
-  string user_id = 7;
-  string shelf_id = 8;
 }
 
 message GetShopsRequest {
@@ -253,25 +258,6 @@ message Shop {
   repeated Shelf shelves = 4;
 }
 
-message UpdateUserNameRequest {
-  string token = 1;
-  string user_name = 2;
-}
-
-message UpdateUserNameResponse {
-  Error error = 1;
-  string user_name = 2;
-}
-message UpdateShopNameRequest {
-  string token = 1;
-  string shop_name = 2;
-}
-
-message UpdateShopNameResponse {
-  Error error = 1;
-  string shop_name = 2;
-}
-
 message GetDailyRankingRequest {
   int32 limit = 1;
   int32 offset = 2;
@@ -287,4 +273,23 @@ message RankingRow {
   int32 rank = 3;
   int32 total_score = 4;
   repeated Shelf shelves = 5;
+}
+
+service Ringo {
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc GetResource(GetResourceRequest) returns (GetResourceResponse);
+  rpc UpdateUserName(UpdateUserNameRequest) returns (UpdateUserNameResponse);
+  rpc UpdateShopName(UpdateShopNameRequest) returns (UpdateShopNameResponse);
+  rpc GetMyShelf(GetMyShelfRequest) returns (GetMyShelfResponse);
+  rpc GetStageList(GetStageListRequest) returns (GetStageListResponse);
+  rpc GetStageActionDetail(GetStageActionDetailRequest) returns (GetStageActionDetailResponse);
+  rpc PostAction(PostActionRequest) returns (PostActionResponse);
+  rpc GetItemList(GetItemListRequest) returns (GetItemListResponse);
+  rpc GetItemDetail(GetItemDetailRequest) returns (GetItemDetailResponse);
+  rpc GetItemActionDetail(GetItemActionDetailRequest) returns (GetItemActionDetailResponse);
+  rpc UpdateShelfContent(UpdateShelfContentRequest) returns (UpdateShelfContentResponse);
+  rpc UpdateShelfSize(UpdateShelfSizeRequest) returns (UpdateShelfSizeResponse);
+  rpc GetShops(GetShopsRequest) returns (GetShopsResponse);
+  rpc GetDailyRanking(GetDailyRankingRequest) returns (GetDailyRankingResponse);
 }

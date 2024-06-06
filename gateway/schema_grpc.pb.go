@@ -14,86 +14,626 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// RegisterClient is the client API for Register service.
+// RingoClient is the client API for Ringo service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type RegisterClient interface {
-	RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error)
+type RingoClient interface {
+	SignUp(ctx context.Context, in *SignUpRequest, opts ...grpc.CallOption) (*SignUpResponse, error)
+	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	GetResource(ctx context.Context, in *GetResourceRequest, opts ...grpc.CallOption) (*GetResourceResponse, error)
+	UpdateUserName(ctx context.Context, in *UpdateUserNameRequest, opts ...grpc.CallOption) (*UpdateUserNameResponse, error)
+	UpdateShopName(ctx context.Context, in *UpdateShopNameRequest, opts ...grpc.CallOption) (*UpdateShopNameResponse, error)
+	GetMyShelf(ctx context.Context, in *GetMyShelfRequest, opts ...grpc.CallOption) (*GetMyShelfResponse, error)
+	GetStageList(ctx context.Context, in *GetStageListRequest, opts ...grpc.CallOption) (*GetStageListResponse, error)
+	GetStageActionDetail(ctx context.Context, in *GetStageActionDetailRequest, opts ...grpc.CallOption) (*GetStageActionDetailResponse, error)
+	PostAction(ctx context.Context, in *PostActionRequest, opts ...grpc.CallOption) (*PostActionResponse, error)
+	GetItemList(ctx context.Context, in *GetItemListRequest, opts ...grpc.CallOption) (*GetItemListResponse, error)
+	GetItemDetail(ctx context.Context, in *GetItemDetailRequest, opts ...grpc.CallOption) (*GetItemDetailResponse, error)
+	GetItemActionDetail(ctx context.Context, in *GetItemActionDetailRequest, opts ...grpc.CallOption) (*GetItemActionDetailResponse, error)
+	UpdateShelfContent(ctx context.Context, in *UpdateShelfContentRequest, opts ...grpc.CallOption) (*UpdateShelfContentResponse, error)
+	UpdateShelfSize(ctx context.Context, in *UpdateShelfSizeRequest, opts ...grpc.CallOption) (*UpdateShelfSizeResponse, error)
+	GetShops(ctx context.Context, in *GetShopsRequest, opts ...grpc.CallOption) (*GetShopsResponse, error)
+	GetDailyRanking(ctx context.Context, in *GetDailyRankingRequest, opts ...grpc.CallOption) (*GetDailyRankingResponse, error)
 }
 
-type registerClient struct {
+type ringoClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewRegisterClient(cc grpc.ClientConnInterface) RegisterClient {
-	return &registerClient{cc}
+func NewRingoClient(cc grpc.ClientConnInterface) RingoClient {
+	return &ringoClient{cc}
 }
 
-func (c *registerClient) RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error) {
-	out := new(RegisterUserResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.Register/RegisterUser", in, out, opts...)
+func (c *ringoClient) SignUp(ctx context.Context, in *SignUpRequest, opts ...grpc.CallOption) (*SignUpResponse, error) {
+	out := new(SignUpResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/SignUp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// RegisterServer is the server API for Register service.
-// All implementations must embed UnimplementedRegisterServer
+func (c *ringoClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
+	out := new(LoginResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/Login", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetResource(ctx context.Context, in *GetResourceRequest, opts ...grpc.CallOption) (*GetResourceResponse, error) {
+	out := new(GetResourceResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetResource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) UpdateUserName(ctx context.Context, in *UpdateUserNameRequest, opts ...grpc.CallOption) (*UpdateUserNameResponse, error) {
+	out := new(UpdateUserNameResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/UpdateUserName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) UpdateShopName(ctx context.Context, in *UpdateShopNameRequest, opts ...grpc.CallOption) (*UpdateShopNameResponse, error) {
+	out := new(UpdateShopNameResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/UpdateShopName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetMyShelf(ctx context.Context, in *GetMyShelfRequest, opts ...grpc.CallOption) (*GetMyShelfResponse, error) {
+	out := new(GetMyShelfResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetMyShelf", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetStageList(ctx context.Context, in *GetStageListRequest, opts ...grpc.CallOption) (*GetStageListResponse, error) {
+	out := new(GetStageListResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetStageList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetStageActionDetail(ctx context.Context, in *GetStageActionDetailRequest, opts ...grpc.CallOption) (*GetStageActionDetailResponse, error) {
+	out := new(GetStageActionDetailResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetStageActionDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) PostAction(ctx context.Context, in *PostActionRequest, opts ...grpc.CallOption) (*PostActionResponse, error) {
+	out := new(PostActionResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/PostAction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetItemList(ctx context.Context, in *GetItemListRequest, opts ...grpc.CallOption) (*GetItemListResponse, error) {
+	out := new(GetItemListResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetItemList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetItemDetail(ctx context.Context, in *GetItemDetailRequest, opts ...grpc.CallOption) (*GetItemDetailResponse, error) {
+	out := new(GetItemDetailResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetItemDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetItemActionDetail(ctx context.Context, in *GetItemActionDetailRequest, opts ...grpc.CallOption) (*GetItemActionDetailResponse, error) {
+	out := new(GetItemActionDetailResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetItemActionDetail", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) UpdateShelfContent(ctx context.Context, in *UpdateShelfContentRequest, opts ...grpc.CallOption) (*UpdateShelfContentResponse, error) {
+	out := new(UpdateShelfContentResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/UpdateShelfContent", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) UpdateShelfSize(ctx context.Context, in *UpdateShelfSizeRequest, opts ...grpc.CallOption) (*UpdateShelfSizeResponse, error) {
+	out := new(UpdateShelfSizeResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/UpdateShelfSize", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetShops(ctx context.Context, in *GetShopsRequest, opts ...grpc.CallOption) (*GetShopsResponse, error) {
+	out := new(GetShopsResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetShops", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *ringoClient) GetDailyRanking(ctx context.Context, in *GetDailyRankingRequest, opts ...grpc.CallOption) (*GetDailyRankingResponse, error) {
+	out := new(GetDailyRankingResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.Ringo/GetDailyRanking", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// RingoServer is the server API for Ringo service.
+// All implementations must embed UnimplementedRingoServer
 // for forward compatibility
-type RegisterServer interface {
-	RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error)
-	mustEmbedUnimplementedRegisterServer()
+type RingoServer interface {
+	SignUp(context.Context, *SignUpRequest) (*SignUpResponse, error)
+	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	GetResource(context.Context, *GetResourceRequest) (*GetResourceResponse, error)
+	UpdateUserName(context.Context, *UpdateUserNameRequest) (*UpdateUserNameResponse, error)
+	UpdateShopName(context.Context, *UpdateShopNameRequest) (*UpdateShopNameResponse, error)
+	GetMyShelf(context.Context, *GetMyShelfRequest) (*GetMyShelfResponse, error)
+	GetStageList(context.Context, *GetStageListRequest) (*GetStageListResponse, error)
+	GetStageActionDetail(context.Context, *GetStageActionDetailRequest) (*GetStageActionDetailResponse, error)
+	PostAction(context.Context, *PostActionRequest) (*PostActionResponse, error)
+	GetItemList(context.Context, *GetItemListRequest) (*GetItemListResponse, error)
+	GetItemDetail(context.Context, *GetItemDetailRequest) (*GetItemDetailResponse, error)
+	GetItemActionDetail(context.Context, *GetItemActionDetailRequest) (*GetItemActionDetailResponse, error)
+	UpdateShelfContent(context.Context, *UpdateShelfContentRequest) (*UpdateShelfContentResponse, error)
+	UpdateShelfSize(context.Context, *UpdateShelfSizeRequest) (*UpdateShelfSizeResponse, error)
+	GetShops(context.Context, *GetShopsRequest) (*GetShopsResponse, error)
+	GetDailyRanking(context.Context, *GetDailyRankingRequest) (*GetDailyRankingResponse, error)
+	mustEmbedUnimplementedRingoServer()
 }
 
-// UnimplementedRegisterServer must be embedded to have forward compatible implementations.
-type UnimplementedRegisterServer struct {
+// UnimplementedRingoServer must be embedded to have forward compatible implementations.
+type UnimplementedRingoServer struct {
 }
 
-func (UnimplementedRegisterServer) RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RegisterUser not implemented")
+func (UnimplementedRingoServer) SignUp(context.Context, *SignUpRequest) (*SignUpResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SignUp not implemented")
 }
-func (UnimplementedRegisterServer) mustEmbedUnimplementedRegisterServer() {}
+func (UnimplementedRingoServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedRingoServer) GetResource(context.Context, *GetResourceRequest) (*GetResourceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetResource not implemented")
+}
+func (UnimplementedRingoServer) UpdateUserName(context.Context, *UpdateUserNameRequest) (*UpdateUserNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserName not implemented")
+}
+func (UnimplementedRingoServer) UpdateShopName(context.Context, *UpdateShopNameRequest) (*UpdateShopNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateShopName not implemented")
+}
+func (UnimplementedRingoServer) GetMyShelf(context.Context, *GetMyShelfRequest) (*GetMyShelfResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyShelf not implemented")
+}
+func (UnimplementedRingoServer) GetStageList(context.Context, *GetStageListRequest) (*GetStageListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStageList not implemented")
+}
+func (UnimplementedRingoServer) GetStageActionDetail(context.Context, *GetStageActionDetailRequest) (*GetStageActionDetailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStageActionDetail not implemented")
+}
+func (UnimplementedRingoServer) PostAction(context.Context, *PostActionRequest) (*PostActionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PostAction not implemented")
+}
+func (UnimplementedRingoServer) GetItemList(context.Context, *GetItemListRequest) (*GetItemListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetItemList not implemented")
+}
+func (UnimplementedRingoServer) GetItemDetail(context.Context, *GetItemDetailRequest) (*GetItemDetailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetItemDetail not implemented")
+}
+func (UnimplementedRingoServer) GetItemActionDetail(context.Context, *GetItemActionDetailRequest) (*GetItemActionDetailResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetItemActionDetail not implemented")
+}
+func (UnimplementedRingoServer) UpdateShelfContent(context.Context, *UpdateShelfContentRequest) (*UpdateShelfContentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateShelfContent not implemented")
+}
+func (UnimplementedRingoServer) UpdateShelfSize(context.Context, *UpdateShelfSizeRequest) (*UpdateShelfSizeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateShelfSize not implemented")
+}
+func (UnimplementedRingoServer) GetShops(context.Context, *GetShopsRequest) (*GetShopsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetShops not implemented")
+}
+func (UnimplementedRingoServer) GetDailyRanking(context.Context, *GetDailyRankingRequest) (*GetDailyRankingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDailyRanking not implemented")
+}
+func (UnimplementedRingoServer) mustEmbedUnimplementedRingoServer() {}
 
-// UnsafeRegisterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to RegisterServer will
+// UnsafeRingoServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to RingoServer will
 // result in compilation errors.
-type UnsafeRegisterServer interface {
-	mustEmbedUnimplementedRegisterServer()
+type UnsafeRingoServer interface {
+	mustEmbedUnimplementedRingoServer()
 }
 
-func RegisterRegisterServer(s grpc.ServiceRegistrar, srv RegisterServer) {
-	s.RegisterService(&Register_ServiceDesc, srv)
+func RegisterRingoServer(s grpc.ServiceRegistrar, srv RingoServer) {
+	s.RegisterService(&Ringo_ServiceDesc, srv)
 }
 
-func _Register_RegisterUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RegisterUserRequest)
+func _Ringo_SignUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SignUpRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegisterServer).RegisterUser(ctx, in)
+		return srv.(RingoServer).SignUp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.Register/RegisterUser",
+		FullMethod: "/ringosu.Ringo/SignUp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegisterServer).RegisterUser(ctx, req.(*RegisterUserRequest))
+		return srv.(RingoServer).SignUp(ctx, req.(*SignUpRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Register_ServiceDesc is the grpc.ServiceDesc for Register service.
+func _Ringo_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).Login(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/Login",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).Login(ctx, req.(*LoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetResource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetResourceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetResource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetResource",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetResource(ctx, req.(*GetResourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_UpdateUserName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).UpdateUserName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/UpdateUserName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).UpdateUserName(ctx, req.(*UpdateUserNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_UpdateShopName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateShopNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).UpdateShopName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/UpdateShopName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).UpdateShopName(ctx, req.(*UpdateShopNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetMyShelf_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyShelfRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetMyShelf(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetMyShelf",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetMyShelf(ctx, req.(*GetMyShelfRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetStageList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStageListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetStageList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetStageList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetStageList(ctx, req.(*GetStageListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetStageActionDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStageActionDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetStageActionDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetStageActionDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetStageActionDetail(ctx, req.(*GetStageActionDetailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_PostAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostActionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).PostAction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/PostAction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).PostAction(ctx, req.(*PostActionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetItemList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetItemListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetItemList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetItemList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetItemList(ctx, req.(*GetItemListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetItemDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetItemDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetItemDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetItemDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetItemDetail(ctx, req.(*GetItemDetailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetItemActionDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetItemActionDetailRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetItemActionDetail(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetItemActionDetail",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetItemActionDetail(ctx, req.(*GetItemActionDetailRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_UpdateShelfContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateShelfContentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).UpdateShelfContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/UpdateShelfContent",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).UpdateShelfContent(ctx, req.(*UpdateShelfContentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_UpdateShelfSize_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateShelfSizeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).UpdateShelfSize(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/UpdateShelfSize",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).UpdateShelfSize(ctx, req.(*UpdateShelfSizeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetShops_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShopsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetShops(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetShops",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetShops(ctx, req.(*GetShopsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ringo_GetDailyRanking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDailyRankingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RingoServer).GetDailyRanking(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ringosu.Ringo/GetDailyRanking",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RingoServer).GetDailyRanking(ctx, req.(*GetDailyRankingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Ringo_ServiceDesc is the grpc.ServiceDesc for Ringo service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Register_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ringosu.Register",
-	HandlerType: (*RegisterServer)(nil),
+var Ringo_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ringosu.Ringo",
+	HandlerType: (*RingoServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "RegisterUser",
-			Handler:    _Register_RegisterUser_Handler,
+			MethodName: "SignUp",
+			Handler:    _Ringo_SignUp_Handler,
+		},
+		{
+			MethodName: "Login",
+			Handler:    _Ringo_Login_Handler,
+		},
+		{
+			MethodName: "GetResource",
+			Handler:    _Ringo_GetResource_Handler,
+		},
+		{
+			MethodName: "UpdateUserName",
+			Handler:    _Ringo_UpdateUserName_Handler,
+		},
+		{
+			MethodName: "UpdateShopName",
+			Handler:    _Ringo_UpdateShopName_Handler,
+		},
+		{
+			MethodName: "GetMyShelf",
+			Handler:    _Ringo_GetMyShelf_Handler,
+		},
+		{
+			MethodName: "GetStageList",
+			Handler:    _Ringo_GetStageList_Handler,
+		},
+		{
+			MethodName: "GetStageActionDetail",
+			Handler:    _Ringo_GetStageActionDetail_Handler,
+		},
+		{
+			MethodName: "PostAction",
+			Handler:    _Ringo_PostAction_Handler,
+		},
+		{
+			MethodName: "GetItemList",
+			Handler:    _Ringo_GetItemList_Handler,
+		},
+		{
+			MethodName: "GetItemDetail",
+			Handler:    _Ringo_GetItemDetail_Handler,
+		},
+		{
+			MethodName: "GetItemActionDetail",
+			Handler:    _Ringo_GetItemActionDetail_Handler,
+		},
+		{
+			MethodName: "UpdateShelfContent",
+			Handler:    _Ringo_UpdateShelfContent_Handler,
+		},
+		{
+			MethodName: "UpdateShelfSize",
+			Handler:    _Ringo_UpdateShelfSize_Handler,
+		},
+		{
+			MethodName: "GetShops",
+			Handler:    _Ringo_GetShops_Handler,
+		},
+		{
+			MethodName: "GetDailyRanking",
+			Handler:    _Ringo_GetDailyRanking_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
