@@ -4,6 +4,12 @@
 ## Table of Contents
 
 - [gateway/schema.proto](#gateway_schema-proto)
+    - [AdminLoginRequest](#ringosu-AdminLoginRequest)
+    - [AdminLoginResponse](#ringosu-AdminLoginResponse)
+    - [ChangePeriodRequest](#ringosu-ChangePeriodRequest)
+    - [ChangePeriodResponse](#ringosu-ChangePeriodResponse)
+    - [ChangeTimeRequest](#ringosu-ChangeTimeRequest)
+    - [ChangeTimeResponse](#ringosu-ChangeTimeResponse)
     - [ConsumedItems](#ringosu-ConsumedItems)
     - [EarnedItems](#ringosu-EarnedItems)
     - [EarningItem](#ringosu-EarningItem)
@@ -26,6 +32,8 @@
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
     - [GetStageListResponse](#ringosu-GetStageListResponse)
+    - [InvokeAutoUpdateRequest](#ringosu-InvokeAutoUpdateRequest)
+    - [InvokeAutoUpdateResponse](#ringosu-InvokeAutoUpdateResponse)
     - [LoginRequest](#ringosu-LoginRequest)
     - [LoginResponse](#ringosu-LoginResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
@@ -50,6 +58,9 @@
     - [UpdateUserNameResponse](#ringosu-UpdateUserNameResponse)
     - [UserExplore](#ringosu-UserExplore)
   
+    - [ChangePeriod](#ringosu-ChangePeriod)
+    - [DebugTime](#ringosu-DebugTime)
+    - [InvokeUpdate](#ringosu-InvokeUpdate)
     - [Ringo](#ringosu-Ringo)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -60,6 +71,88 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## gateway/schema.proto
+
+
+
+<a name="ringosu-AdminLoginRequest"></a>
+
+### AdminLoginRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| user_id | [string](#string) |  |  |
+| row_password | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-AdminLoginResponse"></a>
+
+### AdminLoginResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-ChangePeriodRequest"></a>
+
+### ChangePeriodRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-ChangePeriodResponse"></a>
+
+### ChangePeriodResponse
+
+
+
+
+
+
+
+<a name="ringosu-ChangeTimeRequest"></a>
+
+### ChangeTimeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+| recover_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+
+
+
+
+
+
+<a name="ringosu-ChangeTimeResponse"></a>
+
+### ChangeTimeResponse
+
+
+
+
 
 
 
@@ -428,6 +521,31 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | stage_information | [StageInformation](#ringosu-StageInformation) | repeated |  |
+
+
+
+
+
+
+<a name="ringosu-InvokeAutoUpdateRequest"></a>
+
+### InvokeAutoUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| token | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ringosu-InvokeAutoUpdateResponse"></a>
+
+### InvokeAutoUpdateResponse
+
 
 
 
@@ -829,6 +947,39 @@
  
 
  
+
+
+<a name="ringosu-ChangePeriod"></a>
+
+### ChangePeriod
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| Do | [ChangePeriodRequest](#ringosu-ChangePeriodRequest) | [ChangePeriodResponse](#ringosu-ChangePeriodResponse) |  |
+
+
+<a name="ringosu-DebugTime"></a>
+
+### DebugTime
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| ChangeTime | [ChangePeriodRequest](#ringosu-ChangePeriodRequest) | [ChangePeriodResponse](#ringosu-ChangePeriodResponse) |  |
+
+
+<a name="ringosu-InvokeUpdate"></a>
+
+### InvokeUpdate
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| Do | [InvokeAutoUpdateRequest](#ringosu-InvokeAutoUpdateRequest) | [InvokeAutoUpdateResponse](#ringosu-InvokeAutoUpdateResponse) |  |
 
 
 <a name="ringosu-Ringo"></a>

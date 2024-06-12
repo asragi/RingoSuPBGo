@@ -293,3 +293,48 @@ service Ringo {
   rpc GetShops(GetShopsRequest) returns (GetShopsResponse);
   rpc GetDailyRanking(GetDailyRankingRequest) returns (GetDailyRankingResponse);
 }
+
+message AdminLoginRequest {
+  string user_id = 1;
+  string row_password = 2;
+}
+
+message AdminLoginResponse {
+  string token = 1;
+}
+
+message ChangePeriodRequest {
+  string token = 1;
+}
+
+message ChangePeriodResponse {
+
+}
+
+service ChangePeriod {
+  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc Do(ChangePeriodRequest) returns (ChangePeriodResponse);
+}
+
+message InvokeAutoUpdateRequest {
+  string token = 1;
+}
+
+message InvokeAutoUpdateResponse {}
+
+service InvokeUpdate {
+  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc Do(InvokeAutoUpdateRequest) returns (InvokeAutoUpdateResponse);
+}
+
+message ChangeTimeRequest {
+  string token = 1;
+  google.protobuf.Timestamp recover_time = 2;
+}
+
+message ChangeTimeResponse {}
+
+service DebugTime {
+  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc ChangeTime(ChangePeriodRequest) returns (ChangePeriodResponse);
+}
