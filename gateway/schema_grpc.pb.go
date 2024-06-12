@@ -644,8 +644,8 @@ var Ringo_ServiceDesc = grpc.ServiceDesc{
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChangePeriodClient interface {
-	Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
-	Do(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error)
+	AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
+	ChangePeriod(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error)
 }
 
 type changePeriodClient struct {
@@ -656,18 +656,18 @@ func NewChangePeriodClient(cc grpc.ClientConnInterface) ChangePeriodClient {
 	return &changePeriodClient{cc}
 }
 
-func (c *changePeriodClient) Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
+func (c *changePeriodClient) AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
 	out := new(AdminLoginResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.ChangePeriod/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ringosu.ChangePeriod/AdminLogin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *changePeriodClient) Do(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error) {
+func (c *changePeriodClient) ChangePeriod(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error) {
 	out := new(ChangePeriodResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.ChangePeriod/Do", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ringosu.ChangePeriod/ChangePeriod", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -678,8 +678,8 @@ func (c *changePeriodClient) Do(ctx context.Context, in *ChangePeriodRequest, op
 // All implementations must embed UnimplementedChangePeriodServer
 // for forward compatibility
 type ChangePeriodServer interface {
-	Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
-	Do(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error)
+	AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
+	ChangePeriod(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error)
 	mustEmbedUnimplementedChangePeriodServer()
 }
 
@@ -687,11 +687,11 @@ type ChangePeriodServer interface {
 type UnimplementedChangePeriodServer struct {
 }
 
-func (UnimplementedChangePeriodServer) Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+func (UnimplementedChangePeriodServer) AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminLogin not implemented")
 }
-func (UnimplementedChangePeriodServer) Do(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Do not implemented")
+func (UnimplementedChangePeriodServer) ChangePeriod(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangePeriod not implemented")
 }
 func (UnimplementedChangePeriodServer) mustEmbedUnimplementedChangePeriodServer() {}
 
@@ -706,38 +706,38 @@ func RegisterChangePeriodServer(s grpc.ServiceRegistrar, srv ChangePeriodServer)
 	s.RegisterService(&ChangePeriod_ServiceDesc, srv)
 }
 
-func _ChangePeriod_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ChangePeriod_AdminLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChangePeriodServer).Login(ctx, in)
+		return srv.(ChangePeriodServer).AdminLogin(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.ChangePeriod/Login",
+		FullMethod: "/ringosu.ChangePeriod/AdminLogin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChangePeriodServer).Login(ctx, req.(*AdminLoginRequest))
+		return srv.(ChangePeriodServer).AdminLogin(ctx, req.(*AdminLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChangePeriod_Do_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ChangePeriod_ChangePeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ChangePeriodRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChangePeriodServer).Do(ctx, in)
+		return srv.(ChangePeriodServer).ChangePeriod(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.ChangePeriod/Do",
+		FullMethod: "/ringosu.ChangePeriod/ChangePeriod",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChangePeriodServer).Do(ctx, req.(*ChangePeriodRequest))
+		return srv.(ChangePeriodServer).ChangePeriod(ctx, req.(*ChangePeriodRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -750,134 +750,135 @@ var ChangePeriod_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*ChangePeriodServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Login",
-			Handler:    _ChangePeriod_Login_Handler,
+			MethodName: "AdminLogin",
+			Handler:    _ChangePeriod_AdminLogin_Handler,
 		},
 		{
-			MethodName: "Do",
-			Handler:    _ChangePeriod_Do_Handler,
+			MethodName: "ChangePeriod",
+			Handler:    _ChangePeriod_ChangePeriod_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "gateway/schema.proto",
 }
 
-// InvokeUpdateClient is the client API for InvokeUpdate service.
+// InvokeAutoApplyReservationClient is the client API for InvokeAutoApplyReservation service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type InvokeUpdateClient interface {
-	Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
-	Do(ctx context.Context, in *InvokeAutoUpdateRequest, opts ...grpc.CallOption) (*InvokeAutoUpdateResponse, error)
+type InvokeAutoApplyReservationClient interface {
+	AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
+	InvokeAutoApplyReservation(ctx context.Context, in *InvokeAutoApplyReservationRequest, opts ...grpc.CallOption) (*InvokeAutoApplyReservationResponse, error)
 }
 
-type invokeUpdateClient struct {
+type invokeAutoApplyReservationClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewInvokeUpdateClient(cc grpc.ClientConnInterface) InvokeUpdateClient {
-	return &invokeUpdateClient{cc}
+func NewInvokeAutoApplyReservationClient(cc grpc.ClientConnInterface) InvokeAutoApplyReservationClient {
+	return &invokeAutoApplyReservationClient{cc}
 }
 
-func (c *invokeUpdateClient) Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
+func (c *invokeAutoApplyReservationClient) AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
 	out := new(AdminLoginResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.InvokeUpdate/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ringosu.InvokeAutoApplyReservation/AdminLogin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *invokeUpdateClient) Do(ctx context.Context, in *InvokeAutoUpdateRequest, opts ...grpc.CallOption) (*InvokeAutoUpdateResponse, error) {
-	out := new(InvokeAutoUpdateResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.InvokeUpdate/Do", in, out, opts...)
+func (c *invokeAutoApplyReservationClient) InvokeAutoApplyReservation(ctx context.Context, in *InvokeAutoApplyReservationRequest, opts ...grpc.CallOption) (*InvokeAutoApplyReservationResponse, error) {
+	out := new(InvokeAutoApplyReservationResponse)
+	err := c.cc.Invoke(ctx, "/ringosu.InvokeAutoApplyReservation/InvokeAutoApplyReservation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// InvokeUpdateServer is the server API for InvokeUpdate service.
-// All implementations must embed UnimplementedInvokeUpdateServer
+// InvokeAutoApplyReservationServer is the server API for InvokeAutoApplyReservation service.
+// All implementations must embed UnimplementedInvokeAutoApplyReservationServer
 // for forward compatibility
-type InvokeUpdateServer interface {
-	Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
-	Do(context.Context, *InvokeAutoUpdateRequest) (*InvokeAutoUpdateResponse, error)
-	mustEmbedUnimplementedInvokeUpdateServer()
+type InvokeAutoApplyReservationServer interface {
+	AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
+	InvokeAutoApplyReservation(context.Context, *InvokeAutoApplyReservationRequest) (*InvokeAutoApplyReservationResponse, error)
+	mustEmbedUnimplementedInvokeAutoApplyReservationServer()
 }
 
-// UnimplementedInvokeUpdateServer must be embedded to have forward compatible implementations.
-type UnimplementedInvokeUpdateServer struct {
+// UnimplementedInvokeAutoApplyReservationServer must be embedded to have forward compatible implementations.
+type UnimplementedInvokeAutoApplyReservationServer struct {
 }
 
-func (UnimplementedInvokeUpdateServer) Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+func (UnimplementedInvokeAutoApplyReservationServer) AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminLogin not implemented")
 }
-func (UnimplementedInvokeUpdateServer) Do(context.Context, *InvokeAutoUpdateRequest) (*InvokeAutoUpdateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Do not implemented")
+func (UnimplementedInvokeAutoApplyReservationServer) InvokeAutoApplyReservation(context.Context, *InvokeAutoApplyReservationRequest) (*InvokeAutoApplyReservationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InvokeAutoApplyReservation not implemented")
 }
-func (UnimplementedInvokeUpdateServer) mustEmbedUnimplementedInvokeUpdateServer() {}
+func (UnimplementedInvokeAutoApplyReservationServer) mustEmbedUnimplementedInvokeAutoApplyReservationServer() {
+}
 
-// UnsafeInvokeUpdateServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to InvokeUpdateServer will
+// UnsafeInvokeAutoApplyReservationServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to InvokeAutoApplyReservationServer will
 // result in compilation errors.
-type UnsafeInvokeUpdateServer interface {
-	mustEmbedUnimplementedInvokeUpdateServer()
+type UnsafeInvokeAutoApplyReservationServer interface {
+	mustEmbedUnimplementedInvokeAutoApplyReservationServer()
 }
 
-func RegisterInvokeUpdateServer(s grpc.ServiceRegistrar, srv InvokeUpdateServer) {
-	s.RegisterService(&InvokeUpdate_ServiceDesc, srv)
+func RegisterInvokeAutoApplyReservationServer(s grpc.ServiceRegistrar, srv InvokeAutoApplyReservationServer) {
+	s.RegisterService(&InvokeAutoApplyReservation_ServiceDesc, srv)
 }
 
-func _InvokeUpdate_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _InvokeAutoApplyReservation_AdminLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(InvokeUpdateServer).Login(ctx, in)
+		return srv.(InvokeAutoApplyReservationServer).AdminLogin(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.InvokeUpdate/Login",
+		FullMethod: "/ringosu.InvokeAutoApplyReservation/AdminLogin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(InvokeUpdateServer).Login(ctx, req.(*AdminLoginRequest))
+		return srv.(InvokeAutoApplyReservationServer).AdminLogin(ctx, req.(*AdminLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _InvokeUpdate_Do_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(InvokeAutoUpdateRequest)
+func _InvokeAutoApplyReservation_InvokeAutoApplyReservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InvokeAutoApplyReservationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(InvokeUpdateServer).Do(ctx, in)
+		return srv.(InvokeAutoApplyReservationServer).InvokeAutoApplyReservation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.InvokeUpdate/Do",
+		FullMethod: "/ringosu.InvokeAutoApplyReservation/InvokeAutoApplyReservation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(InvokeUpdateServer).Do(ctx, req.(*InvokeAutoUpdateRequest))
+		return srv.(InvokeAutoApplyReservationServer).InvokeAutoApplyReservation(ctx, req.(*InvokeAutoApplyReservationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// InvokeUpdate_ServiceDesc is the grpc.ServiceDesc for InvokeUpdate service.
+// InvokeAutoApplyReservation_ServiceDesc is the grpc.ServiceDesc for InvokeAutoApplyReservation service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var InvokeUpdate_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ringosu.InvokeUpdate",
-	HandlerType: (*InvokeUpdateServer)(nil),
+var InvokeAutoApplyReservation_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ringosu.InvokeAutoApplyReservation",
+	HandlerType: (*InvokeAutoApplyReservationServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Login",
-			Handler:    _InvokeUpdate_Login_Handler,
+			MethodName: "AdminLogin",
+			Handler:    _InvokeAutoApplyReservation_AdminLogin_Handler,
 		},
 		{
-			MethodName: "Do",
-			Handler:    _InvokeUpdate_Do_Handler,
+			MethodName: "InvokeAutoApplyReservation",
+			Handler:    _InvokeAutoApplyReservation_InvokeAutoApplyReservation_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -888,8 +889,8 @@ var InvokeUpdate_ServiceDesc = grpc.ServiceDesc{
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DebugTimeClient interface {
-	Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
-	ChangeTime(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error)
+	AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
+	ChangeTime(ctx context.Context, in *ChangeTimeRequest, opts ...grpc.CallOption) (*ChangeTimeResponse, error)
 }
 
 type debugTimeClient struct {
@@ -900,17 +901,17 @@ func NewDebugTimeClient(cc grpc.ClientConnInterface) DebugTimeClient {
 	return &debugTimeClient{cc}
 }
 
-func (c *debugTimeClient) Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
+func (c *debugTimeClient) AdminLogin(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
 	out := new(AdminLoginResponse)
-	err := c.cc.Invoke(ctx, "/ringosu.DebugTime/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ringosu.DebugTime/AdminLogin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *debugTimeClient) ChangeTime(ctx context.Context, in *ChangePeriodRequest, opts ...grpc.CallOption) (*ChangePeriodResponse, error) {
-	out := new(ChangePeriodResponse)
+func (c *debugTimeClient) ChangeTime(ctx context.Context, in *ChangeTimeRequest, opts ...grpc.CallOption) (*ChangeTimeResponse, error) {
+	out := new(ChangeTimeResponse)
 	err := c.cc.Invoke(ctx, "/ringosu.DebugTime/ChangeTime", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -922,8 +923,8 @@ func (c *debugTimeClient) ChangeTime(ctx context.Context, in *ChangePeriodReques
 // All implementations must embed UnimplementedDebugTimeServer
 // for forward compatibility
 type DebugTimeServer interface {
-	Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
-	ChangeTime(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error)
+	AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
+	ChangeTime(context.Context, *ChangeTimeRequest) (*ChangeTimeResponse, error)
 	mustEmbedUnimplementedDebugTimeServer()
 }
 
@@ -931,10 +932,10 @@ type DebugTimeServer interface {
 type UnimplementedDebugTimeServer struct {
 }
 
-func (UnimplementedDebugTimeServer) Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+func (UnimplementedDebugTimeServer) AdminLogin(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AdminLogin not implemented")
 }
-func (UnimplementedDebugTimeServer) ChangeTime(context.Context, *ChangePeriodRequest) (*ChangePeriodResponse, error) {
+func (UnimplementedDebugTimeServer) ChangeTime(context.Context, *ChangeTimeRequest) (*ChangeTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangeTime not implemented")
 }
 func (UnimplementedDebugTimeServer) mustEmbedUnimplementedDebugTimeServer() {}
@@ -950,26 +951,26 @@ func RegisterDebugTimeServer(s grpc.ServiceRegistrar, srv DebugTimeServer) {
 	s.RegisterService(&DebugTime_ServiceDesc, srv)
 }
 
-func _DebugTime_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DebugTime_AdminLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DebugTimeServer).Login(ctx, in)
+		return srv.(DebugTimeServer).AdminLogin(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ringosu.DebugTime/Login",
+		FullMethod: "/ringosu.DebugTime/AdminLogin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DebugTimeServer).Login(ctx, req.(*AdminLoginRequest))
+		return srv.(DebugTimeServer).AdminLogin(ctx, req.(*AdminLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _DebugTime_ChangeTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ChangePeriodRequest)
+	in := new(ChangeTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -981,7 +982,7 @@ func _DebugTime_ChangeTime_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/ringosu.DebugTime/ChangeTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DebugTimeServer).ChangeTime(ctx, req.(*ChangePeriodRequest))
+		return srv.(DebugTimeServer).ChangeTime(ctx, req.(*ChangeTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -994,8 +995,8 @@ var DebugTime_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*DebugTimeServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Login",
-			Handler:    _DebugTime_Login_Handler,
+			MethodName: "AdminLogin",
+			Handler:    _DebugTime_AdminLogin_Handler,
 		},
 		{
 			MethodName: "ChangeTime",
