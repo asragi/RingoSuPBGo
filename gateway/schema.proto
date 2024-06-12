@@ -312,29 +312,29 @@ message ChangePeriodResponse {
 }
 
 service ChangePeriod {
-  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
-  rpc Do(ChangePeriodRequest) returns (ChangePeriodResponse);
+  rpc AdminLogin(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc ChangePeriod(ChangePeriodRequest) returns (ChangePeriodResponse);
 }
 
-message InvokeAutoUpdateRequest {
+message InvokeAutoApplyReservationRequest {
   string token = 1;
 }
 
-message InvokeAutoUpdateResponse {}
+message InvokeAutoApplyReservationResponse {}
 
-service InvokeUpdate {
-  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
-  rpc Do(InvokeAutoUpdateRequest) returns (InvokeAutoUpdateResponse);
+service InvokeAutoApplyReservation {
+  rpc AdminLogin(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc InvokeAutoApplyReservation(InvokeAutoApplyReservationRequest) returns (InvokeAutoApplyReservationResponse);
 }
 
 message ChangeTimeRequest {
   string token = 1;
-  google.protobuf.Timestamp recover_time = 2;
+  google.protobuf.Timestamp time = 2;
 }
 
 message ChangeTimeResponse {}
 
 service DebugTime {
-  rpc Login(AdminLoginRequest) returns (AdminLoginResponse);
-  rpc ChangeTime(ChangePeriodRequest) returns (ChangePeriodResponse);
+  rpc AdminLogin(AdminLoginRequest) returns (AdminLoginResponse);
+  rpc ChangeTime(ChangeTimeRequest) returns (ChangeTimeResponse);
 }

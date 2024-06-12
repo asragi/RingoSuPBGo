@@ -32,8 +32,8 @@
     - [GetStageActionDetailResponse](#ringosu-GetStageActionDetailResponse)
     - [GetStageListRequest](#ringosu-GetStageListRequest)
     - [GetStageListResponse](#ringosu-GetStageListResponse)
-    - [InvokeAutoUpdateRequest](#ringosu-InvokeAutoUpdateRequest)
-    - [InvokeAutoUpdateResponse](#ringosu-InvokeAutoUpdateResponse)
+    - [InvokeAutoApplyReservationRequest](#ringosu-InvokeAutoApplyReservationRequest)
+    - [InvokeAutoApplyReservationResponse](#ringosu-InvokeAutoApplyReservationResponse)
     - [LoginRequest](#ringosu-LoginRequest)
     - [LoginResponse](#ringosu-LoginResponse)
     - [PostActionRequest](#ringosu-PostActionRequest)
@@ -60,7 +60,7 @@
   
     - [ChangePeriod](#ringosu-ChangePeriod)
     - [DebugTime](#ringosu-DebugTime)
-    - [InvokeUpdate](#ringosu-InvokeUpdate)
+    - [InvokeAutoApplyReservation](#ringosu-InvokeAutoApplyReservation)
     - [Ringo](#ringosu-Ringo)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -139,7 +139,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | token | [string](#string) |  |  |
-| recover_time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
+| time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
 
 
 
@@ -527,9 +527,9 @@
 
 
 
-<a name="ringosu-InvokeAutoUpdateRequest"></a>
+<a name="ringosu-InvokeAutoApplyReservationRequest"></a>
 
-### InvokeAutoUpdateRequest
+### InvokeAutoApplyReservationRequest
 
 
 
@@ -542,9 +542,9 @@
 
 
 
-<a name="ringosu-InvokeAutoUpdateResponse"></a>
+<a name="ringosu-InvokeAutoApplyReservationResponse"></a>
 
-### InvokeAutoUpdateResponse
+### InvokeAutoApplyReservationResponse
 
 
 
@@ -956,8 +956,8 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
-| Do | [ChangePeriodRequest](#ringosu-ChangePeriodRequest) | [ChangePeriodResponse](#ringosu-ChangePeriodResponse) |  |
+| AdminLogin | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| ChangePeriod | [ChangePeriodRequest](#ringosu-ChangePeriodRequest) | [ChangePeriodResponse](#ringosu-ChangePeriodResponse) |  |
 
 
 <a name="ringosu-DebugTime"></a>
@@ -967,19 +967,19 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
-| ChangeTime | [ChangePeriodRequest](#ringosu-ChangePeriodRequest) | [ChangePeriodResponse](#ringosu-ChangePeriodResponse) |  |
+| AdminLogin | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| ChangeTime | [ChangeTimeRequest](#ringosu-ChangeTimeRequest) | [ChangeTimeResponse](#ringosu-ChangeTimeResponse) |  |
 
 
-<a name="ringosu-InvokeUpdate"></a>
+<a name="ringosu-InvokeAutoApplyReservation"></a>
 
-### InvokeUpdate
+### InvokeAutoApplyReservation
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Login | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
-| Do | [InvokeAutoUpdateRequest](#ringosu-InvokeAutoUpdateRequest) | [InvokeAutoUpdateResponse](#ringosu-InvokeAutoUpdateResponse) |  |
+| AdminLogin | [AdminLoginRequest](#ringosu-AdminLoginRequest) | [AdminLoginResponse](#ringosu-AdminLoginResponse) |  |
+| InvokeAutoApplyReservation | [InvokeAutoApplyReservationRequest](#ringosu-InvokeAutoApplyReservationRequest) | [InvokeAutoApplyReservationResponse](#ringosu-InvokeAutoApplyReservationResponse) |  |
 
 
 <a name="ringosu-Ringo"></a>
